@@ -2,6 +2,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
+import 'results_screen.dart';
+
 class AnalysisScreen extends StatelessWidget {
   const AnalysisScreen({
     super.key,
@@ -22,13 +24,25 @@ class AnalysisScreen extends StatelessWidget {
 
   String get _imageSize {
     final bytes = imageBytes.lengthInBytes;
-    if (bytes < 1024) return '$bytes B';
+
+    if (bytes < 1024) {
+      return '$bytes B';
+    }
 
     if (bytes < 1024 * 1024) {
       return '${(bytes / 1024).toStringAsFixed(1)} KB';
     }
 
     return '${(bytes / (1024 * 1024)).toStringAsFixed(2)} MB';
+  }
+
+  void _openResultsPreview(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) =>
+            ResultsScreen(imageBytes: imageBytes, imageName: imageName),
+      ),
+    );
   }
 
   Widget _sectionTitle(String title) {
@@ -130,6 +144,7 @@ class AnalysisScreen extends StatelessWidget {
                   Icons.check_circle_outline,
                   color: _primary,
                   size: 20,
+                  semanticLabel: 'Image loaded',
                 ),
               ],
             ),
@@ -227,6 +242,55 @@ class AnalysisScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _actionPanel(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(20, 14, 20, 18),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: _border)),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: () => _openResultsPreview(context),
+                icon: const Icon(Icons.visibility_outlined),
+                label: const Text('Preview results layout'),
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(50),
+                  foregroundColor: _primary,
+                  side: const BorderSide(color: _primary),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: null,
+                icon: const Icon(Icons.analytics_outlined),
+                label: const Text('Analyze image'),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Analysis will be available after model integration.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 11, color: _muted),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -329,34 +393,7 @@ class AnalysisScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    border: Border(top: BorderSide(color: _border)),
-                  ),
-                  child: SafeArea(
-                    top: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          width: double.infinity,
-                          child: FilledButton.icon(
-                            onPressed: null,
-                            icon: const Icon(Icons.analytics_outlined),
-                            label: const Text('Analyze image'),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'Available after model integration',
-                          style: TextStyle(fontSize: 11, color: _muted),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                _actionPanel(context),
               ],
             ),
           ),
