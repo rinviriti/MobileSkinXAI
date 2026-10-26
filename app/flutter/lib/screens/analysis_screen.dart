@@ -2,6 +2,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
+import 'results_screen.dart';
+
 class AnalysisScreen extends StatelessWidget {
   const AnalysisScreen({
     super.key,
@@ -14,15 +16,18 @@ class AnalysisScreen extends StatelessWidget {
   final String imageName;
   final String imageSource;
 
-  static const Color _primary = Color(0xFF176B65);
-  static const Color _heading = Color(0xFF213A38);
-  static const Color _muted = Color(0xFF647773);
-  static const Color _border = Color(0xFFDCE7E4);
-  static const Color _background = Color(0xFFF8FAF9);
+  static const Color primary = Color(0xFF176B65);
+  static const Color heading = Color(0xFF213A38);
+  static const Color muted = Color(0xFF647773);
+  static const Color border = Color(0xFFDCE7E4);
+  static const Color background = Color(0xFFF8FAF9);
 
-  String get _imageSize {
+  String get imageSize {
     final bytes = imageBytes.lengthInBytes;
-    if (bytes < 1024) return '$bytes B';
+
+    if (bytes < 1024) {
+      return '$bytes B';
+    }
 
     if (bytes < 1024 * 1024) {
       return '${(bytes / 1024).toStringAsFixed(1)} KB';
@@ -31,20 +36,29 @@ class AnalysisScreen extends StatelessWidget {
     return '${(bytes / (1024 * 1024)).toStringAsFixed(2)} MB';
   }
 
-  Widget _sectionTitle(String title) {
+  void openResultsPreview(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) =>
+            ResultsScreen(imageBytes: imageBytes, imageName: imageName),
+      ),
+    );
+  }
+
+  Widget sectionTitle(String title) {
     return Text(
       title,
       style: const TextStyle(
         fontSize: 17,
         fontWeight: FontWeight.w700,
-        color: _heading,
+        color: heading,
       ),
     );
   }
 
-  Widget _detailRow(String label, String value) {
+  Widget detailRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 11),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -52,7 +66,7 @@ class AnalysisScreen extends StatelessWidget {
             width: 95,
             child: Text(
               label,
-              style: const TextStyle(fontSize: 13, color: _muted),
+              style: const TextStyle(fontSize: 13, color: muted),
             ),
           ),
           Expanded(
@@ -62,7 +76,7 @@ class AnalysisScreen extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
-                color: _heading,
+                color: heading,
               ),
             ),
           ),
@@ -71,17 +85,16 @@ class AnalysisScreen extends StatelessWidget {
     );
   }
 
-  Widget _imageCard() {
+  Widget imageCard() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: _border),
+        border: Border.all(color: border),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 310,
@@ -90,16 +103,12 @@ class AnalysisScreen extends StatelessWidget {
             child: Image.memory(
               imageBytes,
               fit: BoxFit.contain,
-              errorBuilder: (context, error, stackTrace) {
+              errorBuilder: (_, error, stackTrace) {
                 return const Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        Icons.broken_image_outlined,
-                        size: 36,
-                        color: _muted,
-                      ),
+                      Icon(Icons.broken_image_outlined, size: 36, color: muted),
                       SizedBox(height: 8),
                       Text('Unable to display image'),
                     ],
@@ -112,7 +121,7 @@ class AnalysisScreen extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
-                const Icon(Icons.image_outlined, color: _primary, size: 20),
+                const Icon(Icons.image_outlined, color: primary, size: 20),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
@@ -121,15 +130,16 @@ class AnalysisScreen extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: _heading,
+                      color: heading,
                     ),
                   ),
                 ),
                 const SizedBox(width: 8),
                 const Icon(
                   Icons.check_circle_outline,
-                  color: _primary,
+                  color: primary,
                   size: 20,
+                  semanticLabel: 'Image loaded',
                 ),
               ],
             ),
@@ -139,13 +149,13 @@ class AnalysisScreen extends StatelessWidget {
     );
   }
 
-  Widget _modelStatus() {
+  Widget modelStatus() {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: _border),
+        border: Border.all(color: border),
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(
@@ -153,7 +163,7 @@ class AnalysisScreen extends StatelessWidget {
         children: [
           const Row(
             children: [
-              Icon(Icons.memory_outlined, color: _primary, size: 22),
+              Icon(Icons.memory_outlined, color: primary, size: 22),
               SizedBox(width: 10),
               Expanded(
                 child: Text(
@@ -161,7 +171,7 @@ class AnalysisScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
-                    color: _heading,
+                    color: heading,
                   ),
                 ),
               ),
@@ -199,14 +209,14 @@ class AnalysisScreen extends StatelessWidget {
             'The classification model is still being '
             'developed. Analysis will become available '
             'after training, validation, and mobile integration.',
-            style: TextStyle(color: _muted, fontSize: 13, height: 1.6),
+            style: TextStyle(color: muted, fontSize: 13, height: 1.6),
           ),
         ],
       ),
     );
   }
 
-  Widget _privacyNotice() {
+  Widget privacyNotice() {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -216,14 +226,14 @@ class AnalysisScreen extends StatelessWidget {
       child: const Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.shield_outlined, color: _primary, size: 21),
+          Icon(Icons.shield_outlined, color: primary, size: 21),
           SizedBox(width: 12),
           Expanded(
             child: Text(
               'This prototype displays the selected image '
               'locally. It does not upload the image to a '
               'server or perform medical analysis.',
-              style: TextStyle(color: _heading, fontSize: 12, height: 1.6),
+              style: TextStyle(color: heading, fontSize: 12, height: 1.6),
             ),
           ),
         ],
@@ -231,20 +241,69 @@ class AnalysisScreen extends StatelessWidget {
     );
   }
 
+  Widget actionPanel(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(20, 14, 20, 18),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        border: Border(top: BorderSide(color: border)),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: () => openResultsPreview(context),
+                icon: const Icon(Icons.visibility_outlined),
+                label: const Text('Preview results layout'),
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(50),
+                  foregroundColor: primary,
+                  side: const BorderSide(color: primary),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: null,
+                icon: const Icon(Icons.analytics_outlined),
+                label: const Text('Analyze image'),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Analysis will be available after model integration.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 11, color: muted),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _background,
+      backgroundColor: background,
       appBar: AppBar(
         title: const Text(
           'Image review',
           style: TextStyle(
-            color: _heading,
+            color: heading,
             fontSize: 19,
             fontWeight: FontWeight.w700,
           ),
         ),
-        backgroundColor: _background,
+        backgroundColor: background,
         leading: IconButton(
           tooltip: 'Back',
           icon: const Icon(Icons.arrow_back),
@@ -268,7 +327,7 @@ class AnalysisScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 27,
                             fontWeight: FontWeight.w700,
-                            color: _heading,
+                            color: heading,
                             letterSpacing: -0.5,
                           ),
                         ),
@@ -278,14 +337,14 @@ class AnalysisScreen extends StatelessWidget {
                           'continuing to model analysis.',
                           style: TextStyle(
                             fontSize: 14,
-                            color: _muted,
+                            color: muted,
                             height: 1.5,
                           ),
                         ),
                         const SizedBox(height: 24),
-                        _imageCard(),
+                        imageCard(),
                         const SizedBox(height: 26),
-                        _sectionTitle('Image details'),
+                        sectionTitle('Image details'),
                         const SizedBox(height: 10),
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -295,24 +354,24 @@ class AnalysisScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: _border),
+                            border: Border.all(color: border),
                           ),
                           child: Column(
                             children: [
-                              _detailRow('Source', imageSource),
+                              detailRow('Source', imageSource),
                               const Divider(height: 1),
-                              _detailRow('File size', _imageSize),
+                              detailRow('File size', imageSize),
                               const Divider(height: 1),
-                              _detailRow('Status', 'Image loaded'),
+                              detailRow('Status', 'Image loaded'),
                             ],
                           ),
                         ),
                         const SizedBox(height: 26),
-                        _sectionTitle('Model readiness'),
+                        sectionTitle('Model readiness'),
                         const SizedBox(height: 12),
-                        _modelStatus(),
+                        modelStatus(),
                         const SizedBox(height: 22),
-                        _privacyNotice(),
+                        privacyNotice(),
                         const SizedBox(height: 22),
                         const Text(
                           'For research and educational '
@@ -322,41 +381,14 @@ class AnalysisScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12,
                             height: 1.5,
-                            color: _muted,
+                            color: muted,
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    border: Border(top: BorderSide(color: _border)),
-                  ),
-                  child: SafeArea(
-                    top: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          width: double.infinity,
-                          child: FilledButton.icon(
-                            onPressed: null,
-                            icon: const Icon(Icons.analytics_outlined),
-                            label: const Text('Analyze image'),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          'Available after model integration',
-                          style: TextStyle(fontSize: 11, color: _muted),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                actionPanel(context),
               ],
             ),
           ),
