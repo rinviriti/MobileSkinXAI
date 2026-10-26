@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:image/image.dart' as img;
 import 'package:tflite_flutter/tflite_flutter.dart';
+import 'package:flutter/foundation.dart';
 
 import '../models/prediction.dart';
 
@@ -25,10 +26,10 @@ class SkinClassifier {
     final inputTensor = _interpreter!.getInputTensor(0);
     final outputTensor = _interpreter!.getOutputTensor(0);
 
-    print('Input shape: ${inputTensor.shape}');
-    print('Input type: ${inputTensor.type}');
-    print('Output shape: ${outputTensor.shape}');
-    print('Output type: ${outputTensor.type}');
+    debugPrint('Input shape: ${inputTensor.shape}');
+    debugPrint('Input type: ${inputTensor.type}');
+    debugPrint('Output shape: ${outputTensor.shape}');
+    debugPrint('Output type: ${outputTensor.type}');
   }
 
   Future<Prediction> predict(File imageFile) async {
