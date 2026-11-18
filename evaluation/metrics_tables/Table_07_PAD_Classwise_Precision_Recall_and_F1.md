@@ -1,0 +1,55 @@
+# PAD_Classwise_Precision_Recall_and_F1
+
+Primary declared-lesion scoring on the same 205 units; undefined precision from no predictions would be zero. All four true classes are present. Precision and recall are percentages; F1 is a fraction.
+
+| Model | Training | Class | Declared units | Correct | Precision (%) | Recall (%) | F1 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MobileNetV3-Small | E1 | NV | 41 | 37 | 64.91 | 90.24 | 0.7551 |
+| MobileNetV3-Small | E1 | MEL | 7 | 4 | 6.56 | 57.14 | 0.1176 |
+| MobileNetV3-Small | E1 | BCC | 129 | 63 | 80.77 | 48.84 | 0.6087 |
+| MobileNetV3-Small | E1 | SCC | 28 | 1 | 11.11 | 3.57 | 0.0541 |
+| MobileNetV3-Small | E2 | NV | 41 | 34 | 94.44 | 82.93 | 0.8831 |
+| MobileNetV3-Small | E2 | MEL | 7 | 4 | 80.00 | 57.14 | 0.6667 |
+| MobileNetV3-Small | E2 | BCC | 129 | 125 | 80.13 | 96.90 | 0.8772 |
+| MobileNetV3-Small | E2 | SCC | 28 | 5 | 62.50 | 17.86 | 0.2778 |
+| EfficientNet-Lite0 | E1 | NV | 41 | 34 | 60.71 | 82.93 | 0.7010 |
+| EfficientNet-Lite0 | E1 | MEL | 7 | 3 | 2.97 | 42.86 | 0.0556 |
+| EfficientNet-Lite0 | E1 | BCC | 129 | 31 | 81.58 | 24.03 | 0.3713 |
+| EfficientNet-Lite0 | E1 | SCC | 28 | 3 | 30.00 | 10.71 | 0.1579 |
+| EfficientNet-Lite0 | E2 | NV | 41 | 36 | 90.00 | 87.80 | 0.8889 |
+| EfficientNet-Lite0 | E2 | MEL | 7 | 3 | 100.00 | 42.86 | 0.6000 |
+| EfficientNet-Lite0 | E2 | BCC | 129 | 123 | 83.11 | 95.35 | 0.8881 |
+| EfficientNet-Lite0 | E2 | SCC | 28 | 9 | 64.29 | 32.14 | 0.4286 |
+| MobileNetV4-Conv-Small | E1 | NV | 41 | 36 | 61.02 | 87.80 | 0.7200 |
+| MobileNetV4-Conv-Small | E1 | MEL | 7 | 1 | 2.86 | 14.29 | 0.0476 |
+| MobileNetV4-Conv-Small | E1 | BCC | 129 | 85 | 79.44 | 65.89 | 0.7203 |
+| MobileNetV4-Conv-Small | E1 | SCC | 28 | 2 | 50.00 | 7.14 | 0.1250 |
+| MobileNetV4-Conv-Small | E2 | NV | 41 | 36 | 85.71 | 87.80 | 0.8675 |
+| MobileNetV4-Conv-Small | E2 | MEL | 7 | 5 | 100.00 | 71.43 | 0.8333 |
+| MobileNetV4-Conv-Small | E2 | BCC | 129 | 117 | 81.82 | 90.70 | 0.8603 |
+| MobileNetV4-Conv-Small | E2 | SCC | 28 | 6 | 40.00 | 21.43 | 0.2791 |
+| ConvNeXt-Tiny | E1 | NV | 41 | 41 | 37.61 | 100.00 | 0.5467 |
+| ConvNeXt-Tiny | E1 | MEL | 7 | 3 | 10.00 | 42.86 | 0.1622 |
+| ConvNeXt-Tiny | E1 | BCC | 129 | 54 | 90.00 | 41.86 | 0.5714 |
+| ConvNeXt-Tiny | E1 | SCC | 28 | 3 | 50.00 | 10.71 | 0.1765 |
+| ConvNeXt-Tiny | E2 | NV | 41 | 35 | 94.59 | 85.37 | 0.8974 |
+| ConvNeXt-Tiny | E2 | MEL | 7 | 5 | 71.43 | 71.43 | 0.7143 |
+| ConvNeXt-Tiny | E2 | BCC | 129 | 121 | 82.31 | 93.80 | 0.8768 |
+| ConvNeXt-Tiny | E2 | SCC | 28 | 6 | 42.86 | 21.43 | 0.2857 |
+| MobileSkinXAI-Enhanced | E1 | NV | 41 | 38 | 64.41 | 92.68 | 0.7600 |
+| MobileSkinXAI-Enhanced | E1 | MEL | 7 | 2 | 5.13 | 28.57 | 0.0870 |
+| MobileSkinXAI-Enhanced | E1 | BCC | 129 | 84 | 82.35 | 65.12 | 0.7273 |
+| MobileSkinXAI-Enhanced | E1 | SCC | 28 | 2 | 40.00 | 7.14 | 0.1212 |
+| MobileSkinXAI-Enhanced | E2 | NV | 41 | 31 | 91.18 | 75.61 | 0.8267 |
+| MobileSkinXAI-Enhanced | E2 | MEL | 7 | 5 | 71.43 | 71.43 | 0.7143 |
+| MobileSkinXAI-Enhanced | E2 | BCC | 129 | 124 | 79.49 | 96.12 | 0.8702 |
+| MobileSkinXAI-Enhanced | E2 | SCC | 28 | 5 | 62.50 | 17.86 | 0.2778 |
+| MobileSkinXAI-Enhanced (LR Control) | E1 | NV | 41 | 39 | 55.71 | 95.12 | 0.7027 |
+| MobileSkinXAI-Enhanced (LR Control) | E1 | MEL | 7 | 3 | 7.69 | 42.86 | 0.1304 |
+| MobileSkinXAI-Enhanced (LR Control) | E1 | BCC | 129 | 75 | 84.27 | 58.14 | 0.6881 |
+| MobileSkinXAI-Enhanced (LR Control) | E1 | SCC | 28 | 3 | 42.86 | 10.71 | 0.1714 |
+| MobileSkinXAI-Enhanced (LR Control) | E2 | NV | 41 | 33 | 86.84 | 80.49 | 0.8354 |
+| MobileSkinXAI-Enhanced (LR Control) | E2 | MEL | 7 | 4 | 100.00 | 57.14 | 0.7273 |
+| MobileSkinXAI-Enhanced (LR Control) | E2 | BCC | 129 | 123 | 82.00 | 95.35 | 0.8817 |
+| MobileSkinXAI-Enhanced (LR Control) | E2 | SCC | 28 | 7 | 53.85 | 25.00 | 0.3415 |
+

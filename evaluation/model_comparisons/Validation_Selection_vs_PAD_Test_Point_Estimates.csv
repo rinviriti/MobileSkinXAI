@@ -1,0 +1,13 @@
+Model,Population,Macro-F1,Validation selected
+MobileNetV3-Small,Development validation,0.6373503322897786,False
+EfficientNet-Lite0,Development validation,0.6680124640650956,False
+MobileNetV4-Conv-Small,Development validation,0.7232102474639788,False
+ConvNeXt-Tiny,Development validation,0.6296331818946661,False
+MobileSkinXAI-Enhanced,Development validation,0.6537047648358969,False
+MobileSkinXAI-Enhanced (LR Control),Development validation,0.7305275287052387,True
+MobileNetV3-Small,Final PAD test,0.6761885775043669,False
+EfficientNet-Lite0,Final PAD test,0.701386740014899,False
+MobileNetV4-Conv-Small,Final PAD test,0.7100417744850812,False
+ConvNeXt-Tiny,Final PAD test,0.693561872909699,False
+MobileSkinXAI-Enhanced,Final PAD test,0.6722263993316624,False
+MobileSkinXAI-Enhanced (LR Control),Final PAD test,0.696474902497271,True

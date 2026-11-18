@@ -7,8 +7,10 @@ No augmentation, class balancing, or model-specific normalization happens here.
 
 import argparse
 import csv
+import hashlib
 import json
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from PIL import Image, ImageOps, __version__ as pillow_version
@@ -32,16 +34,27 @@ def write_csv(path, rows, fields):
 
 def audit_splits(data_dir, split_dir):
     """Check manifests against original labels, metadata, and image paths."""
+    label_rows = read_csv(data_dir / "ISIC_2019_Training_GroundTruth.csv")
+    metadata_rows = read_csv(data_dir / "ISIC_2019_Training_Metadata.csv")
+    for name, rows in [('ground truth', label_rows), ('metadata', metadata_rows)]:
+        ids = [row['image'] for row in rows]
+        if len(ids) != len(set(ids)):
+            raise ValueError(f'Duplicate image IDs in {name}')
+    for row in label_rows:
+        values = [float(value) for key, value in row.items() if key != 'image']
+        if any(value not in (0, 1) for value in values) or sum(values) != 1:
+            raise ValueError(f'Invalid one-hot label: {row["image"]}')
     ground_truth = {
         row["image"]: row
-        for row in read_csv(data_dir / "ISIC_2019_Training_GroundTruth.csv")
+        for row in label_rows
     }
     metadata = {
         row["image"]: row
-        for row in read_csv(data_dir / "ISIC_2019_Training_Metadata.csv")
+        for row in metadata_rows
     }
     seen_images = set()
     lesion_owners = {}
+    lesion_labels = {}
     by_split = {}
 
     for split in SPLITS:
@@ -66,6 +79,8 @@ def audit_splits(data_dir, split_dir):
                 raise ValueError(f"Label mismatch: {image_id}")
             if metadata[image_id]["lesion_id"].strip() != lesion_id:
                 raise ValueError(f"Lesion ID mismatch: {image_id}")
+            if lesion_labels.setdefault(lesion_id, label) != label:
+                raise ValueError(f'Conflicting labels for lesion: {lesion_id}')
 
             owner = lesion_owners.setdefault(lesion_id, split)
             if owner != split:
@@ -85,6 +100,13 @@ def audit_splits(data_dir, split_dir):
         raise ValueError("Excluded images overlap or contain duplicate IDs")
     if any(row["lesion_id"].strip() for row in excluded):
         raise ValueError("An excluded image unexpectedly has a lesion ID")
+    eligible = {row['image'] for row in label_rows if any(float(row[c]) == 1 for c in CLASSES)}
+    if seen_images | excluded_ids != eligible:
+        raise ValueError('Included and excluded manifests do not cover all four-class source rows')
+    for row in excluded:
+        image_id = row['image']
+        if metadata[image_id]['lesion_id'].strip() or float(ground_truth[image_id][row['label']]) != 1:
+            raise ValueError(f'Incorrect missing-lesion exclusion: {image_id}')
 
     print(f"PASS: {len(seen_images)} images, {len(lesion_owners)} distinct known lesions")
     print(f"PASS: {len(excluded_ids)} excluded images kept outside the splits")
@@ -113,15 +135,28 @@ def prepare_image(source, destination, size):
     return original_width, original_height
 
 
+def prepare_record(arguments):
+    data_dir, output_dir, size, split, row = arguments
+    image_id, label = row['image'], row['label']
+    source = data_dir / 'images' / 'ISIC_2019_Training_Input' / f'{image_id}.jpg'
+    relative = Path(split) / label / f'{image_id}.jpg'
+    try:
+        width, height = prepare_image(source, output_dir / relative, size)
+    except Exception as error:
+        raise RuntimeError(f'Image processing failed: {source}: {error}') from error
+    return row, relative, width, height
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path.home() / "Desktop" / "MobileSkinXAI-Datasets" / "ISIC2019",
+        default=Path(__file__).resolve().parents[1] / "dataset" / "ISIC2019",
         help="Location of original ISIC 2019 images, labels, and metadata",
     )
     parser.add_argument("--size", type=int, default=224, help="Square image side in pixels")
+    parser.add_argument('--workers', type=int, default=4, help='Independent image preparation threads')
     parser.add_argument(
         "--sample-per-class",
         type=int,
@@ -130,7 +165,7 @@ def main():
     )
     parser.add_argument("--audit-only", action="store_true", help="Check split CSVs without processing")
     args = parser.parse_args()
-    if args.size < 32 or args.sample_per_class < 0:
+    if args.size < 32 or args.sample_per_class < 0 or args.workers < 1:
         parser.error("--size must be >=32 and --sample-per-class must be >=0")
 
     data_dir = args.data_dir.expanduser().resolve()
@@ -143,7 +178,7 @@ def main():
     version = f"rgb{args.size}_letterbox_gray114_v1"
     run_type = "sample" if args.sample_per_class else "full"
     output_dir = data_dir / "preprocessed" / version / run_type
-    if (output_dir / "summary.json").exists():
+    if output_dir.exists():
         raise FileExistsError(
             f"Completed output already exists: {output_dir}. "
             "Do not overwrite a recorded experiment."
@@ -163,15 +198,12 @@ def main():
             records = subset
 
         counts[split] = Counter()
-        for number, row in enumerate(records, start=1):
+        pool = ThreadPoolExecutor(max_workers=args.workers)
+        prepared = pool.map(prepare_record,
+                            ((data_dir, output_dir, args.size, split, row) for row in records),
+                            buffersize=args.workers * 2)
+        for number, (row, relative_output, width, height) in enumerate(prepared, start=1):
             image_id, label = row["image"], row["label"]
-            source = data_dir / "images" / "ISIC_2019_Training_Input" / f"{image_id}.jpg"
-            relative_output = Path(split) / label / f"{image_id}.jpg"
-            destination = output_dir / relative_output
-            try:
-                width, height = prepare_image(source, destination, args.size)
-            except Exception as error:
-                raise RuntimeError(f"Image processing failed: {source}: {error}") from error
 
             manifest.append({
                 "image": image_id,
@@ -195,7 +227,8 @@ def main():
                 })
 
             if number % 500 == 0 or number == len(records):
-                print(f"{split}: {number}/{len(records)} images prepared")
+                print(f"{split}: {number}/{len(records)} images prepared", flush=True)
+        pool.shutdown(wait=True)
 
     write_csv(
         output_dir / "manifest.csv",
@@ -226,8 +259,10 @@ def main():
         "total_written": len(manifest),
         "review_flags": len(warnings),
         "pillow_version": pillow_version,
+        "split_sha256": {path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+                         for path in sorted(split_dir.glob('*.csv'))},
         "limitations": ["Known lesion IDs are disjoint; patient-level independence unverified",
-                        "No near-duplicate image search performed"],
+                        "This preprocessing step does not resolve visual duplicate candidates; consult dataset/audit/duplicate_candidates.csv"],
     }
     with (output_dir / "summary.json").open("w", encoding="utf-8") as handle:
         json.dump(summary, handle, indent=2)

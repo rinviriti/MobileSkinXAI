@@ -1,0 +1,25 @@
+test_actual_loop_contains_guard (__main__.ControllerTests.test_actual_loop_contains_guard) ... ok
+test_equality_and_index (__main__.ControllerTests.test_equality_and_index) ... ok
+test_frozen_stage (__main__.ControllerTests.test_frozen_stage) ... ok
+test_highest_metric (__main__.ControllerTests.test_highest_metric) ... ok
+test_improvement_resets (__main__.ControllerTests.test_improvement_resets) ... ok
+test_later_improvement (__main__.ControllerTests.test_later_improvement) ... ok
+test_m1_replay (__main__.ControllerTests.test_m1_replay) ... ok
+test_no_updates_after_stop (__main__.ControllerTests.test_no_updates_after_stop) ... ok
+test_resume_at_boundary_no_updates (__main__.ControllerTests.test_resume_at_boundary_no_updates) ... ok
+test_resume_equivalence (__main__.ControllerTests.test_resume_equivalence) ... ok
+test_six_stale (__main__.ControllerTests.test_six_stale) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.064s
+
+OK
+
+{
+  "status": "PASS",
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "engineering_smoke": "actual CPU AdamW loop; constant metric; exactly seven updates then stop, best epoch one",
+  "output": "test_actual_loop_contains_guard (__main__.ControllerTests.test_actual_loop_contains_guard) ... ok\ntest_equality_and_index (__main__.ControllerTests.test_equality_and_index) ... ok\ntest_frozen_stage (__main__.ControllerTests.test_frozen_stage) ... ok\ntest_highest_metric (__main__.ControllerTests.test_highest_metric) ... ok\ntest_improvement_resets (__main__.ControllerTests.test_improvement_resets) ... ok\ntest_later_improvement (__main__.ControllerTests.test_later_improvement) ... ok\ntest_m1_replay (__main__.ControllerTests.test_m1_replay) ... ok\ntest_no_updates_after_stop (__main__.ControllerTests.test_no_updates_after_stop) ... ok\ntest_resume_at_boundary_no_updates (__main__.ControllerTests.test_resume_at_boundary_no_updates) ... ok\ntest_resume_equivalence (__main__.ControllerTests.test_resume_equivalence) ... ok\ntest_six_stale (__main__.ControllerTests.test_six_stale) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 1.064s\n\nOK\n"
+}

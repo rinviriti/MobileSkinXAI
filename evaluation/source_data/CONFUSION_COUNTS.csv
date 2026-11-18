@@ -1,0 +1,769 @@
+model,model_name,condition,dataset,analysis_level,true_class,predicted_class,count,row_percent
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,NV,NV,908,89.72332015810277
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,NV,MEL,81,8.003952569169961
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,NV,BCC,22,2.1739130434782608
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,NV,SCC,1,0.09881422924901186
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,MEL,NV,46,24.210526315789473
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,MEL,MEL,136,71.57894736842105
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,MEL,BCC,7,3.6842105263157894
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,MEL,SCC,1,0.5263157894736842
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,BCC,NV,7,3.867403314917127
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,BCC,MEL,24,13.259668508287293
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,BCC,BCC,145,80.11049723756906
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,BCC,SCC,5,2.7624309392265194
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,SCC,NV,4,10.526315789473685
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,SCC,MEL,6,15.789473684210526
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,SCC,BCC,20,52.63157894736842
+M1,MobileNetV3-Small,E1,ISIC,lesion_primary,SCC,SCC,8,21.05263157894737
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,NV,NV,887,87.64822134387352
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,NV,MEL,102,10.079051383399209
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,NV,BCC,14,1.383399209486166
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,NV,SCC,9,0.8893280632411067
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,MEL,NV,51,26.842105263157894
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,MEL,MEL,128,67.36842105263158
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,MEL,BCC,11,5.7894736842105265
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,BCC,NV,10,5.524861878453039
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,BCC,MEL,23,12.707182320441989
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,BCC,BCC,125,69.06077348066299
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,BCC,SCC,23,12.707182320441989
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,SCC,NV,3,7.894736842105263
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,SCC,MEL,5,13.157894736842104
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,SCC,BCC,11,28.94736842105263
+M2,EfficientNet-Lite0,E1,ISIC,lesion_primary,SCC,SCC,19,50.0
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,NV,NV,928,91.699604743083
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,NV,MEL,58,5.7312252964426875
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,NV,BCC,26,2.569169960474308
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,NV,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,MEL,NV,58,30.526315789473685
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,MEL,MEL,118,62.10526315789474
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,MEL,BCC,11,5.7894736842105265
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,MEL,SCC,3,1.5789473684210527
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,BCC,NV,6,3.314917127071823
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,BCC,MEL,18,9.94475138121547
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,BCC,BCC,153,84.5303867403315
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,BCC,SCC,4,2.2099447513812156
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,SCC,NV,5,13.157894736842104
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,SCC,MEL,3,7.894736842105263
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,SCC,BCC,18,47.36842105263158
+M3,MobileNetV4-Conv-Small,E1,ISIC,lesion_primary,SCC,SCC,12,31.57894736842105
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,NV,NV,945,93.3794466403162
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,NV,MEL,57,5.632411067193676
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,NV,BCC,9,0.8893280632411067
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,NV,SCC,1,0.09881422924901186
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,MEL,NV,64,33.68421052631579
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,MEL,MEL,119,62.63157894736842
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,MEL,BCC,7,3.6842105263157894
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,BCC,NV,9,4.972375690607735
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,BCC,MEL,14,7.734806629834254
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,BCC,BCC,155,85.6353591160221
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,BCC,SCC,3,1.6574585635359116
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,SCC,NV,7,18.42105263157895
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,SCC,MEL,4,10.526315789473685
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,SCC,BCC,14,36.8421052631579
+M4,ConvNeXt-Tiny,E1,ISIC,lesion_primary,SCC,SCC,13,34.21052631578947
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,NV,NV,905,89.42687747035573
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,NV,MEL,87,8.596837944664031
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,NV,BCC,18,1.7786561264822134
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,NV,SCC,2,0.1976284584980237
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,MEL,NV,44,23.157894736842106
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,MEL,MEL,134,70.52631578947368
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,MEL,BCC,10,5.2631578947368425
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,MEL,SCC,2,1.0526315789473684
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,BCC,NV,6,3.314917127071823
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,BCC,MEL,16,8.839779005524862
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,BCC,BCC,150,82.87292817679558
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,BCC,SCC,9,4.972375690607735
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,SCC,NV,4,10.526315789473685
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,SCC,MEL,4,10.526315789473685
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,SCC,BCC,16,42.10526315789474
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,lesion_primary,SCC,SCC,14,36.8421052631579
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,NV,NV,940,92.88537549407114
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,NV,MEL,55,5.434782608695652
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,NV,BCC,16,1.5810276679841897
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,NV,SCC,1,0.09881422924901186
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,MEL,NV,55,28.94736842105263
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,MEL,MEL,121,63.68421052631579
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,MEL,BCC,10,5.2631578947368425
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,MEL,SCC,4,2.1052631578947367
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,BCC,NV,7,3.867403314917127
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,BCC,MEL,14,7.734806629834254
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,BCC,BCC,153,84.5303867403315
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,BCC,SCC,7,3.867403314917127
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,SCC,NV,5,13.157894736842104
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,SCC,MEL,4,10.526315789473685
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,SCC,BCC,14,36.8421052631579
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,lesion_primary,SCC,SCC,15,39.473684210526315
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,NV,NV,925,91.40316205533597
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,NV,MEL,49,4.841897233201581
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,NV,BCC,33,3.260869565217391
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,NV,SCC,5,0.49407114624505927
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,MEL,NV,72,37.89473684210526
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,MEL,MEL,94,49.473684210526315
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,MEL,BCC,21,11.052631578947368
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,MEL,SCC,3,1.5789473684210527
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,BCC,NV,9,4.972375690607735
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,BCC,MEL,10,5.524861878453039
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,BCC,BCC,154,85.0828729281768
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,BCC,SCC,8,4.419889502762431
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,SCC,NV,6,15.789473684210526
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,SCC,MEL,1,2.6315789473684212
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,SCC,BCC,20,52.63157894736842
+M1,MobileNetV3-Small,E2,ISIC,lesion_primary,SCC,SCC,11,28.94736842105263
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,NV,NV,895,88.43873517786561
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,NV,MEL,86,8.49802371541502
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,NV,BCC,29,2.8656126482213438
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,NV,SCC,2,0.1976284584980237
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,MEL,NV,56,29.473684210526315
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,MEL,MEL,122,64.21052631578948
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,MEL,BCC,12,6.315789473684211
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,BCC,NV,11,6.077348066298343
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,BCC,MEL,11,6.077348066298343
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,BCC,BCC,153,84.5303867403315
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,BCC,SCC,6,3.314917127071823
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,SCC,NV,3,7.894736842105263
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,SCC,MEL,4,10.526315789473685
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,SCC,BCC,23,60.526315789473685
+M2,EfficientNet-Lite0,E2,ISIC,lesion_primary,SCC,SCC,8,21.05263157894737
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,NV,NV,955,94.36758893280633
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,NV,MEL,41,4.051383399209486
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,NV,BCC,15,1.482213438735178
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,NV,SCC,1,0.09881422924901186
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,MEL,NV,80,42.10526315789474
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,MEL,MEL,92,48.421052631578945
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,MEL,BCC,14,7.368421052631579
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,MEL,SCC,4,2.1052631578947367
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,BCC,NV,18,9.94475138121547
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,BCC,MEL,18,9.94475138121547
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,BCC,BCC,142,78.45303867403315
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,BCC,SCC,3,1.6574585635359116
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,SCC,NV,8,21.05263157894737
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,SCC,MEL,3,7.894736842105263
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,SCC,BCC,21,55.26315789473684
+M3,MobileNetV4-Conv-Small,E2,ISIC,lesion_primary,SCC,SCC,6,15.789473684210526
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,NV,NV,941,92.98418972332016
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,NV,MEL,55,5.434782608695652
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,NV,BCC,13,1.284584980237154
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,NV,SCC,3,0.2964426877470356
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,MEL,NV,60,31.57894736842105
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,MEL,MEL,122,64.21052631578948
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,MEL,BCC,8,4.2105263157894735
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,BCC,NV,8,4.419889502762431
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,BCC,MEL,11,6.077348066298343
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,BCC,BCC,157,86.74033149171271
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,BCC,SCC,5,2.7624309392265194
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,SCC,NV,6,15.789473684210526
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,SCC,MEL,4,10.526315789473685
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,SCC,BCC,19,50.0
+M4,ConvNeXt-Tiny,E2,ISIC,lesion_primary,SCC,SCC,9,23.68421052631579
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,NV,NV,950,93.87351778656127
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,NV,MEL,40,3.952569169960474
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,NV,BCC,17,1.6798418972332017
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,NV,SCC,5,0.49407114624505927
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,MEL,NV,70,36.8421052631579
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,MEL,MEL,104,54.73684210526316
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,MEL,BCC,12,6.315789473684211
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,MEL,SCC,4,2.1052631578947367
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,BCC,NV,9,4.972375690607735
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,BCC,MEL,13,7.18232044198895
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,BCC,BCC,147,81.21546961325967
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,BCC,SCC,12,6.629834254143646
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,SCC,NV,4,10.526315789473685
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,SCC,MEL,2,5.2631578947368425
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,SCC,BCC,17,44.73684210526316
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,lesion_primary,SCC,SCC,15,39.473684210526315
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,NV,NV,912,90.11857707509881
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,NV,MEL,76,7.509881422924901
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,NV,BCC,23,2.272727272727273
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,NV,SCC,1,0.09881422924901186
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,MEL,NV,55,28.94736842105263
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,MEL,MEL,123,64.73684210526316
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,MEL,BCC,11,5.7894736842105265
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,MEL,SCC,1,0.5263157894736842
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,BCC,NV,9,4.972375690607735
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,BCC,MEL,20,11.049723756906078
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,BCC,BCC,148,81.76795580110497
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,BCC,SCC,4,2.2099447513812156
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,SCC,NV,5,13.157894736842104
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,SCC,MEL,3,7.894736842105263
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,SCC,BCC,20,52.63157894736842
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,lesion_primary,SCC,SCC,10,26.31578947368421
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,NV,NV,1358,84.40024860161591
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,NV,MEL,199,12.367930391547546
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,NV,BCC,49,3.045369794903667
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,NV,SCC,3,0.18645121193287756
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,MEL,NV,128,24.242424242424242
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,MEL,MEL,367,69.50757575757575
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,MEL,BCC,32,6.0606060606060606
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,MEL,SCC,1,0.1893939393939394
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,BCC,NV,19,4.103671706263499
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,BCC,MEL,71,15.334773218142548
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,BCC,BCC,356,76.88984881209504
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,BCC,SCC,17,3.67170626349892
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,SCC,NV,9,8.737864077669903
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,SCC,MEL,21,20.388349514563107
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,SCC,BCC,55,53.398058252427184
+M1,MobileNetV3-Small,E1,ISIC,image_secondary,SCC,SCC,18,17.475728155339805
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,NV,NV,1323,82.22498446239901
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,NV,MEL,231,14.356743318831573
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,NV,BCC,41,2.54816656308266
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,NV,SCC,14,0.870105655686762
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,MEL,NV,121,22.916666666666668
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,MEL,MEL,363,68.75
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,MEL,BCC,33,6.25
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,MEL,SCC,11,2.0833333333333335
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,BCC,NV,28,6.047516198704104
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,BCC,MEL,71,15.334773218142548
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,BCC,BCC,295,63.71490280777538
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,BCC,SCC,69,14.902807775377969
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,SCC,NV,7,6.796116504854369
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,SCC,MEL,14,13.592233009708737
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,SCC,BCC,35,33.980582524271846
+M2,EfficientNet-Lite0,E1,ISIC,image_secondary,SCC,SCC,47,45.63106796116505
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,NV,NV,1394,86.63766314481045
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,NV,MEL,149,9.260410192666253
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,NV,BCC,62,3.853325046612803
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,NV,SCC,4,0.24860161591050342
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,MEL,NV,155,29.356060606060606
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,MEL,MEL,329,62.31060606060606
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,MEL,BCC,36,6.818181818181818
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,MEL,SCC,8,1.5151515151515151
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,BCC,NV,21,4.535637149028077
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,BCC,MEL,60,12.958963282937365
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,BCC,BCC,370,79.91360691144709
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,BCC,SCC,12,2.591792656587473
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,SCC,NV,14,13.592233009708737
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,SCC,MEL,12,11.650485436893204
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,SCC,BCC,49,47.57281553398058
+M3,MobileNetV4-Conv-Small,E1,ISIC,image_secondary,SCC,SCC,28,27.184466019417474
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,NV,NV,1449,90.05593536357986
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,NV,MEL,136,8.452454940957116
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,NV,BCC,23,1.4294592914853947
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,NV,SCC,1,0.062150403977625855
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,MEL,NV,150,28.40909090909091
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,MEL,MEL,347,65.71969696969697
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,MEL,BCC,28,5.303030303030303
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,MEL,SCC,3,0.5681818181818182
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,BCC,NV,23,4.967602591792657
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,BCC,MEL,54,11.663066954643629
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,BCC,BCC,372,80.34557235421167
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,BCC,SCC,14,3.023758099352052
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,SCC,NV,15,14.563106796116505
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,SCC,MEL,16,15.533980582524272
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,SCC,BCC,40,38.83495145631068
+M4,ConvNeXt-Tiny,E1,ISIC,image_secondary,SCC,SCC,32,31.067961165048544
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,NV,NV,1344,83.53014294592914
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,NV,MEL,217,13.48663766314481
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,NV,BCC,43,2.6724673710379117
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,NV,SCC,5,0.3107520198881293
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,MEL,NV,130,24.62121212121212
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,MEL,MEL,350,66.28787878787878
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,MEL,BCC,37,7.007575757575758
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,MEL,SCC,11,2.0833333333333335
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,BCC,NV,16,3.4557235421166306
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,BCC,MEL,59,12.742980561555076
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,BCC,BCC,370,79.91360691144709
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,BCC,SCC,18,3.8876889848812093
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,SCC,NV,8,7.766990291262136
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,SCC,MEL,16,15.533980582524272
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,SCC,BCC,53,51.45631067961165
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,ISIC,image_secondary,SCC,SCC,26,25.24271844660194
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,NV,NV,1430,88.87507768800498
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,NV,MEL,133,8.266003729024238
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,NV,BCC,40,2.4860161591050343
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,NV,SCC,6,0.3729024238657551
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,MEL,NV,151,28.598484848484848
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,MEL,MEL,338,64.01515151515152
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,MEL,BCC,30,5.681818181818182
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,MEL,SCC,9,1.7045454545454546
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,BCC,NV,19,4.103671706263499
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,BCC,MEL,56,12.095032397408207
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,BCC,BCC,369,79.6976241900648
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,BCC,SCC,19,4.103671706263499
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,SCC,NV,10,9.70873786407767
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,SCC,MEL,15,14.563106796116505
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,SCC,BCC,46,44.66019417475728
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,ISIC,image_secondary,SCC,SCC,32,31.067961165048544
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,NV,NV,1381,85.8297078931013
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,NV,MEL,145,9.01180857675575
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,NV,BCC,73,4.536979490366687
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,NV,SCC,10,0.6215040397762586
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,MEL,NV,164,31.060606060606062
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,MEL,MEL,293,55.49242424242424
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,MEL,BCC,54,10.227272727272727
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,MEL,SCC,17,3.2196969696969697
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,BCC,NV,27,5.831533477321814
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,BCC,MEL,42,9.071274298056155
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,BCC,BCC,355,76.67386609071275
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,BCC,SCC,39,8.423326133909287
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,SCC,NV,12,11.650485436893204
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,SCC,MEL,6,5.825242718446602
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,SCC,BCC,59,57.28155339805825
+M1,MobileNetV3-Small,E2,ISIC,image_secondary,SCC,SCC,26,25.24271844660194
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,NV,NV,1304,81.04412678682411
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,NV,MEL,225,13.983840894965818
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,NV,BCC,75,4.661280298321939
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,NV,SCC,5,0.3107520198881293
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,MEL,NV,127,24.053030303030305
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,MEL,MEL,352,66.66666666666667
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,MEL,BCC,48,9.090909090909092
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,MEL,SCC,1,0.1893939393939394
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,BCC,NV,27,5.831533477321814
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,BCC,MEL,51,11.01511879049676
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,BCC,BCC,370,79.91360691144709
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,BCC,SCC,15,3.239740820734341
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,SCC,NV,10,9.70873786407767
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,SCC,MEL,13,12.62135922330097
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,SCC,BCC,59,57.28155339805825
+M2,EfficientNet-Lite0,E2,ISIC,image_secondary,SCC,SCC,21,20.388349514563107
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,NV,NV,1452,90.24238657551274
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,NV,MEL,118,7.333747669359851
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,NV,BCC,35,2.175264139216905
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,NV,SCC,4,0.24860161591050342
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,MEL,NV,217,41.09848484848485
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,MEL,MEL,259,49.053030303030305
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,MEL,BCC,45,8.522727272727273
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,MEL,SCC,7,1.3257575757575757
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,BCC,NV,50,10.799136069114471
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,BCC,MEL,57,12.311015118790497
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,BCC,BCC,347,74.94600431965442
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,BCC,SCC,9,1.9438444924406046
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,SCC,NV,18,17.475728155339805
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,SCC,MEL,10,9.70873786407767
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,SCC,BCC,60,58.25242718446602
+M3,MobileNetV4-Conv-Small,E2,ISIC,image_secondary,SCC,SCC,15,14.563106796116505
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,NV,NV,1420,88.25357364822871
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,NV,MEL,151,9.384711000621504
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,NV,BCC,33,2.050963331261653
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,NV,SCC,5,0.3107520198881293
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,MEL,NV,147,27.84090909090909
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,MEL,MEL,344,65.15151515151516
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,MEL,BCC,36,6.818181818181818
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,MEL,SCC,1,0.1893939393939394
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,BCC,NV,17,3.67170626349892
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,BCC,MEL,53,11.44708423326134
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,BCC,BCC,378,81.6414686825054
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,BCC,SCC,15,3.239740820734341
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,SCC,NV,13,12.62135922330097
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,SCC,MEL,12,11.650485436893204
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,SCC,BCC,55,53.398058252427184
+M4,ConvNeXt-Tiny,E2,ISIC,image_secondary,SCC,SCC,23,22.33009708737864
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,NV,NV,1445,89.80733374766936
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,NV,MEL,107,6.650093225605967
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,NV,BCC,48,2.983219390926041
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,NV,SCC,9,0.5593536357986327
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,MEL,NV,176,33.333333333333336
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,MEL,MEL,302,57.196969696969695
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,MEL,BCC,39,7.386363636363637
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,MEL,SCC,11,2.0833333333333335
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,BCC,NV,24,5.183585313174946
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,BCC,MEL,47,10.151187904967603
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,BCC,BCC,351,75.80993520518359
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,BCC,SCC,41,8.855291576673865
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,SCC,NV,9,8.737864077669903
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,SCC,MEL,6,5.825242718446602
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,SCC,BCC,50,48.54368932038835
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,ISIC,image_secondary,SCC,SCC,38,36.89320388349515
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,NV,NV,1375,85.45680546923555
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,NV,MEL,179,11.124922311995029
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,NV,BCC,50,3.107520198881293
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,NV,SCC,5,0.3107520198881293
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,MEL,NV,156,29.545454545454547
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,MEL,MEL,325,61.553030303030305
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,MEL,BCC,43,8.143939393939394
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,MEL,SCC,4,0.7575757575757576
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,BCC,NV,18,3.8876889848812093
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,BCC,MEL,58,12.526997840172786
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,BCC,BCC,368,79.48164146868251
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,BCC,SCC,19,4.103671706263499
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,SCC,NV,13,12.62135922330097
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,SCC,MEL,12,11.650485436893204
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,SCC,BCC,57,55.33980582524272
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,ISIC,image_secondary,SCC,SCC,21,20.388349514563107
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,NV,NV,37,90.2439024390244
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,NV,MEL,1,2.4390243902439024
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,NV,BCC,3,7.317073170731708
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,NV,SCC,0,0.0
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,MEL,NV,3,42.857142857142854
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,MEL,MEL,4,57.142857142857146
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,MEL,BCC,0,0.0
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,BCC,NV,14,10.852713178294573
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,BCC,MEL,44,34.10852713178294
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,BCC,BCC,63,48.83720930232558
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,BCC,SCC,8,6.2015503875969
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,SCC,NV,3,10.714285714285714
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,SCC,MEL,12,42.857142857142854
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,SCC,BCC,12,42.857142857142854
+M1,MobileNetV3-Small,E1,PAD,lesion_primary,SCC,SCC,1,3.5714285714285716
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,NV,NV,34,82.92682926829268
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,NV,MEL,6,14.634146341463415
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,NV,BCC,1,2.4390243902439024
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,NV,SCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,MEL,NV,4,57.142857142857146
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,MEL,MEL,3,42.857142857142854
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,MEL,BCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,BCC,NV,18,13.953488372093023
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,BCC,MEL,73,56.58914728682171
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,BCC,BCC,31,24.031007751937985
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,BCC,SCC,7,5.426356589147287
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,SCC,NV,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,SCC,MEL,19,67.85714285714286
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,SCC,BCC,6,21.428571428571427
+M2,EfficientNet-Lite0,E1,PAD,lesion_primary,SCC,SCC,3,10.714285714285714
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,NV,NV,36,87.8048780487805
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,NV,MEL,2,4.878048780487805
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,NV,BCC,3,7.317073170731708
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,NV,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,MEL,NV,3,42.857142857142854
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,MEL,MEL,1,14.285714285714286
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,MEL,BCC,3,42.857142857142854
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,BCC,NV,16,12.4031007751938
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,BCC,MEL,26,20.155038759689923
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,BCC,BCC,85,65.89147286821705
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,BCC,SCC,2,1.550387596899225
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,SCC,NV,4,14.285714285714286
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,SCC,MEL,6,21.428571428571427
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,SCC,BCC,16,57.142857142857146
+M3,MobileNetV4-Conv-Small,E1,PAD,lesion_primary,SCC,SCC,2,7.142857142857143
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,NV,NV,41,100.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,NV,MEL,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,NV,BCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,NV,SCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,MEL,NV,4,57.142857142857146
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,MEL,MEL,3,42.857142857142854
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,MEL,BCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,BCC,NV,52,40.310077519379846
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,BCC,MEL,20,15.503875968992247
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,BCC,BCC,54,41.86046511627907
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,BCC,SCC,3,2.3255813953488373
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,SCC,NV,12,42.857142857142854
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,SCC,MEL,7,25.0
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,SCC,BCC,6,21.428571428571427
+M4,ConvNeXt-Tiny,E1,PAD,lesion_primary,SCC,SCC,3,10.714285714285714
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,NV,NV,38,92.6829268292683
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,NV,MEL,2,4.878048780487805
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,NV,BCC,1,2.4390243902439024
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,NV,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,MEL,NV,4,57.142857142857146
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,MEL,MEL,2,28.571428571428573
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,MEL,BCC,1,14.285714285714286
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,BCC,NV,14,10.852713178294573
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,BCC,MEL,28,21.705426356589147
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,BCC,BCC,84,65.11627906976744
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,BCC,SCC,3,2.3255813953488373
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,SCC,NV,3,10.714285714285714
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,SCC,MEL,7,25.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,SCC,BCC,16,57.142857142857146
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,lesion_primary,SCC,SCC,2,7.142857142857143
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,NV,NV,39,95.1219512195122
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,NV,MEL,1,2.4390243902439024
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,NV,BCC,1,2.4390243902439024
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,NV,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,MEL,NV,4,57.142857142857146
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,MEL,MEL,3,42.857142857142854
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,MEL,BCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,MEL,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,BCC,NV,21,16.27906976744186
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,BCC,MEL,29,22.48062015503876
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,BCC,BCC,75,58.13953488372093
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,BCC,SCC,4,3.10077519379845
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,SCC,NV,6,21.428571428571427
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,SCC,MEL,6,21.428571428571427
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,SCC,BCC,13,46.42857142857143
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,lesion_primary,SCC,SCC,3,10.714285714285714
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,NV,NV,34,82.92682926829268
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,NV,MEL,1,2.4390243902439024
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,NV,BCC,6,14.634146341463415
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,NV,SCC,0,0.0
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,MEL,NV,1,14.285714285714286
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,MEL,MEL,4,57.142857142857146
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,MEL,BCC,2,28.571428571428573
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,BCC,NV,1,0.7751937984496124
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,BCC,MEL,0,0.0
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,BCC,BCC,125,96.89922480620154
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,BCC,SCC,3,2.3255813953488373
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,SCC,NV,0,0.0
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,SCC,BCC,23,82.14285714285714
+M1,MobileNetV3-Small,E2,PAD,lesion_primary,SCC,SCC,5,17.857142857142858
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,NV,NV,36,87.8048780487805
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,NV,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,NV,BCC,5,12.195121951219512
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,NV,SCC,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,MEL,NV,3,42.857142857142854
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,MEL,MEL,3,42.857142857142854
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,MEL,BCC,1,14.285714285714286
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,BCC,NV,1,0.7751937984496124
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,BCC,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,BCC,BCC,123,95.34883720930233
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,BCC,SCC,5,3.875968992248062
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,SCC,NV,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,SCC,BCC,19,67.85714285714286
+M2,EfficientNet-Lite0,E2,PAD,lesion_primary,SCC,SCC,9,32.142857142857146
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,NV,NV,36,87.8048780487805
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,NV,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,NV,BCC,4,9.75609756097561
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,NV,SCC,1,2.4390243902439024
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,MEL,NV,2,28.571428571428573
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,MEL,MEL,5,71.42857142857143
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,MEL,BCC,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,BCC,NV,4,3.10077519379845
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,BCC,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,BCC,BCC,117,90.69767441860465
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,BCC,SCC,8,6.2015503875969
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,SCC,NV,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,SCC,BCC,22,78.57142857142857
+M3,MobileNetV4-Conv-Small,E2,PAD,lesion_primary,SCC,SCC,6,21.428571428571427
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,NV,NV,35,85.36585365853658
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,NV,MEL,2,4.878048780487805
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,NV,BCC,4,9.75609756097561
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,NV,SCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,MEL,NV,2,28.571428571428573
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,MEL,MEL,5,71.42857142857143
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,MEL,BCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,BCC,NV,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,BCC,MEL,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,BCC,BCC,121,93.7984496124031
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,BCC,SCC,8,6.2015503875969
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,SCC,NV,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,SCC,BCC,22,78.57142857142857
+M4,ConvNeXt-Tiny,E2,PAD,lesion_primary,SCC,SCC,6,21.428571428571427
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,NV,NV,31,75.60975609756098
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,NV,MEL,1,2.4390243902439024
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,NV,BCC,8,19.51219512195122
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,NV,SCC,1,2.4390243902439024
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,MEL,NV,1,14.285714285714286
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,MEL,MEL,5,71.42857142857143
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,MEL,BCC,1,14.285714285714286
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,BCC,NV,2,1.550387596899225
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,BCC,MEL,1,0.7751937984496124
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,BCC,BCC,124,96.12403100775194
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,BCC,SCC,2,1.550387596899225
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,SCC,NV,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,SCC,BCC,23,82.14285714285714
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,lesion_primary,SCC,SCC,5,17.857142857142858
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,NV,NV,33,80.48780487804878
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,NV,MEL,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,NV,BCC,5,12.195121951219512
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,NV,SCC,3,7.317073170731708
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,MEL,NV,2,28.571428571428573
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,MEL,MEL,4,57.142857142857146
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,MEL,BCC,1,14.285714285714286
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,MEL,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,BCC,NV,3,2.3255813953488373
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,BCC,MEL,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,BCC,BCC,123,95.34883720930233
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,BCC,SCC,3,2.3255813953488373
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,SCC,NV,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,SCC,MEL,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,SCC,BCC,21,75.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,lesion_primary,SCC,SCC,7,25.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,NV,NV,41,87.23404255319149
+M1,MobileNetV3-Small,E1,PAD,image_secondary,NV,MEL,2,4.25531914893617
+M1,MobileNetV3-Small,E1,PAD,image_secondary,NV,BCC,4,8.51063829787234
+M1,MobileNetV3-Small,E1,PAD,image_secondary,NV,SCC,0,0.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,MEL,NV,3,30.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,MEL,MEL,6,60.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,MEL,BCC,1,10.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,MEL,SCC,0,0.0
+M1,MobileNetV3-Small,E1,PAD,image_secondary,BCC,NV,19,11.377245508982035
+M1,MobileNetV3-Small,E1,PAD,image_secondary,BCC,MEL,52,31.137724550898202
+M1,MobileNetV3-Small,E1,PAD,image_secondary,BCC,BCC,85,50.89820359281437
+M1,MobileNetV3-Small,E1,PAD,image_secondary,BCC,SCC,11,6.586826347305389
+M1,MobileNetV3-Small,E1,PAD,image_secondary,SCC,NV,5,13.513513513513514
+M1,MobileNetV3-Small,E1,PAD,image_secondary,SCC,MEL,15,40.54054054054054
+M1,MobileNetV3-Small,E1,PAD,image_secondary,SCC,BCC,14,37.83783783783784
+M1,MobileNetV3-Small,E1,PAD,image_secondary,SCC,SCC,3,8.108108108108109
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,NV,NV,39,82.97872340425532
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,NV,MEL,7,14.893617021276595
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,NV,BCC,1,2.127659574468085
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,NV,SCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,MEL,NV,5,50.0
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,MEL,MEL,5,50.0
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,MEL,BCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,BCC,NV,25,14.970059880239521
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,BCC,MEL,93,55.68862275449102
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,BCC,BCC,39,23.353293413173652
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,BCC,SCC,10,5.9880239520958085
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,SCC,NV,1,2.7027027027027026
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,SCC,MEL,25,67.56756756756756
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,SCC,BCC,6,16.216216216216218
+M2,EfficientNet-Lite0,E1,PAD,image_secondary,SCC,SCC,5,13.513513513513514
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,NV,NV,41,87.23404255319149
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,NV,MEL,2,4.25531914893617
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,NV,BCC,4,8.51063829787234
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,NV,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,MEL,NV,4,40.0
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,MEL,MEL,1,10.0
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,MEL,BCC,5,50.0
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,MEL,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,BCC,NV,20,11.976047904191617
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,BCC,MEL,35,20.95808383233533
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,BCC,BCC,109,65.26946107784431
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,BCC,SCC,3,1.7964071856287425
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,SCC,NV,5,13.513513513513514
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,SCC,MEL,8,21.62162162162162
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,SCC,BCC,21,56.75675675675676
+M3,MobileNetV4-Conv-Small,E1,PAD,image_secondary,SCC,SCC,3,8.108108108108109
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,NV,NV,46,97.87234042553192
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,NV,MEL,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,NV,BCC,1,2.127659574468085
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,NV,SCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,MEL,NV,5,50.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,MEL,MEL,5,50.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,MEL,BCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,BCC,NV,63,37.724550898203596
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,BCC,MEL,25,14.970059880239521
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,BCC,BCC,74,44.31137724550898
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,BCC,SCC,5,2.9940119760479043
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,SCC,NV,17,45.945945945945944
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,SCC,MEL,8,21.62162162162162
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,SCC,BCC,8,21.62162162162162
+M4,ConvNeXt-Tiny,E1,PAD,image_secondary,SCC,SCC,4,10.81081081081081
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,NV,NV,43,91.48936170212765
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,NV,MEL,3,6.382978723404255
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,NV,BCC,1,2.127659574468085
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,NV,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,MEL,NV,7,70.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,MEL,MEL,3,30.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,MEL,BCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,MEL,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,BCC,NV,20,11.976047904191617
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,BCC,MEL,38,22.75449101796407
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,BCC,BCC,105,62.874251497005986
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,BCC,SCC,4,2.395209580838323
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,SCC,NV,4,10.81081081081081
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,SCC,MEL,9,24.324324324324323
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,SCC,BCC,19,51.351351351351354
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E1,PAD,image_secondary,SCC,SCC,5,13.513513513513514
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,NV,NV,44,93.61702127659575
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,NV,MEL,2,4.25531914893617
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,NV,BCC,1,2.127659574468085
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,NV,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,MEL,NV,7,70.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,MEL,MEL,3,30.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,MEL,BCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,MEL,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,BCC,NV,24,14.37125748502994
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,BCC,MEL,39,23.353293413173652
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,BCC,BCC,98,58.68263473053892
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,BCC,SCC,6,3.592814371257485
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,SCC,NV,7,18.91891891891892
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,SCC,MEL,8,21.62162162162162
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,SCC,BCC,16,43.24324324324324
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E1,PAD,image_secondary,SCC,SCC,6,16.216216216216218
+M1,MobileNetV3-Small,E2,PAD,image_secondary,NV,NV,38,80.85106382978724
+M1,MobileNetV3-Small,E2,PAD,image_secondary,NV,MEL,1,2.127659574468085
+M1,MobileNetV3-Small,E2,PAD,image_secondary,NV,BCC,7,14.893617021276595
+M1,MobileNetV3-Small,E2,PAD,image_secondary,NV,SCC,1,2.127659574468085
+M1,MobileNetV3-Small,E2,PAD,image_secondary,MEL,NV,1,10.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,MEL,MEL,7,70.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,MEL,BCC,2,20.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,MEL,SCC,0,0.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,BCC,NV,1,0.5988023952095808
+M1,MobileNetV3-Small,E2,PAD,image_secondary,BCC,MEL,0,0.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,BCC,BCC,159,95.20958083832335
+M1,MobileNetV3-Small,E2,PAD,image_secondary,BCC,SCC,7,4.191616766467066
+M1,MobileNetV3-Small,E2,PAD,image_secondary,SCC,NV,1,2.7027027027027026
+M1,MobileNetV3-Small,E2,PAD,image_secondary,SCC,MEL,0,0.0
+M1,MobileNetV3-Small,E2,PAD,image_secondary,SCC,BCC,30,81.08108108108108
+M1,MobileNetV3-Small,E2,PAD,image_secondary,SCC,SCC,6,16.216216216216218
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,NV,NV,40,85.1063829787234
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,NV,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,NV,BCC,7,14.893617021276595
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,NV,SCC,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,MEL,NV,5,50.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,MEL,MEL,4,40.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,MEL,BCC,1,10.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,MEL,SCC,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,BCC,NV,2,1.1976047904191616
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,BCC,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,BCC,BCC,156,93.41317365269461
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,BCC,SCC,9,5.389221556886228
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,SCC,NV,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,SCC,MEL,0,0.0
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,SCC,BCC,25,67.56756756756756
+M2,EfficientNet-Lite0,E2,PAD,image_secondary,SCC,SCC,12,32.432432432432435
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,NV,NV,40,85.1063829787234
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,NV,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,NV,BCC,6,12.76595744680851
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,NV,SCC,1,2.127659574468085
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,MEL,NV,3,30.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,MEL,MEL,7,70.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,MEL,BCC,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,MEL,SCC,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,BCC,NV,6,3.592814371257485
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,BCC,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,BCC,BCC,148,88.62275449101796
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,BCC,SCC,13,7.7844311377245505
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,SCC,NV,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,SCC,MEL,0,0.0
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,SCC,BCC,27,72.97297297297297
+M3,MobileNetV4-Conv-Small,E2,PAD,image_secondary,SCC,SCC,10,27.027027027027028
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,NV,NV,41,87.23404255319149
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,NV,MEL,2,4.25531914893617
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,NV,BCC,4,8.51063829787234
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,NV,SCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,MEL,NV,3,30.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,MEL,MEL,7,70.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,MEL,BCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,MEL,SCC,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,BCC,NV,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,BCC,MEL,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,BCC,BCC,156,93.41317365269461
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,BCC,SCC,11,6.586826347305389
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,SCC,NV,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,SCC,MEL,0,0.0
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,SCC,BCC,27,72.97297297297297
+M4,ConvNeXt-Tiny,E2,PAD,image_secondary,SCC,SCC,10,27.027027027027028
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,NV,NV,35,74.46808510638297
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,NV,MEL,2,4.25531914893617
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,NV,BCC,9,19.148936170212767
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,NV,SCC,1,2.127659574468085
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,MEL,NV,2,20.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,MEL,MEL,7,70.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,MEL,BCC,1,10.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,MEL,SCC,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,BCC,NV,4,2.395209580838323
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,BCC,MEL,1,0.5988023952095808
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,BCC,BCC,157,94.0119760479042
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,BCC,SCC,5,2.9940119760479043
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,SCC,NV,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,SCC,MEL,0,0.0
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,SCC,BCC,28,75.67567567567568
+M5,MobileSkinXAI-Enhanced (MobileNetV4),E2,PAD,image_secondary,SCC,SCC,9,24.324324324324323
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,NV,NV,37,78.72340425531915
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,NV,MEL,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,NV,BCC,7,14.893617021276595
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,NV,SCC,3,6.382978723404255
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,MEL,NV,3,30.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,MEL,MEL,6,60.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,MEL,BCC,1,10.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,MEL,SCC,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,BCC,NV,4,2.395209580838323
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,BCC,MEL,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,BCC,BCC,155,92.81437125748504
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,BCC,SCC,8,4.790419161676646
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,SCC,NV,0,0.0
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,SCC,MEL,2,5.405405405405405
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,SCC,BCC,26,70.27027027027027
+M5-LR,MobileSkinXAI-Enhanced LR Control (MobileNetV4),E2,PAD,image_secondary,SCC,SCC,9,24.324324324324323

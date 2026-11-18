@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "epochs": 13,
+  "best_epoch": 7,
+  "best_PAD_validation_lesion_F1": 0.7232102474639788,
+  "training_seconds": 335.24892886999805,
+  "peak_allocated_GiB": 0.19089269638061523,
+  "best_checkpoint": "research/thesis_assets/E1_E2_joint_domain/v20261117T221855Z_supervised_joint_seed42/03_E2_Training/checkpoints/best.pt",
+  "best_checkpoint_sha256": "54abdab247118cd6801402932a1cc37fad9a0d81813013ce4ce0bd8e395b4afc",
+  "last_checkpoint_sha256": "252cbbdfee2dcf12b706007cf3d0c18358a5aeeb2145183ccf266d8d032f8ae0"
+}

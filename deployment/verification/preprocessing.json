@@ -1,0 +1,51 @@
+{
+  "version": "v20261118T024841Z_frozen_E2_student_reference",
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "input_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "input_dtype": "float32",
+  "channel_order": "RGB",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "pixel_scaling": "float32(pixel)/float32(255)",
+  "normalization": "(scaled_rgb-mean[c])/std[c]",
+  "raw_pipeline": [
+    "decode original image fully",
+    "Pillow ImageOps.exif_transpose (all8EXIF orientations)",
+    "convert RGB",
+    "ImageOps.pad RGB to224x224 with LANCZOS,gray114,centering(.5,.5),no crop",
+    "encode JPEG quality95,subsampling0(4:4:4)",
+    "decode that JPEG RGB",
+    "normalize and batch NHWC"
+  ],
+  "raw_pipeline_warning": "Historical training/evaluation consumed prepared JPEGs. Omitting the JPEG round trip or substituting a Dart bilinear/nearest resize does not reproduce the exact input. Raw mobile equivalence is not yet validated.",
+  "prepared_pipeline": "Existing prepared224 JPEG ->RGB decode ->normalize; no extra resize/encode/EXIF operation",
+  "geometry_implementation": "def contain(\n    image: Image.Image, size: tuple[int, int], method: int = Image.Resampling.BICUBIC\n) -> Image.Image:\n    \"\"\"\n    Returns a resized version of the image, set to the maximum width and height\n    within the requested size, while maintaining the original aspect ratio.\n\n    :param image: The image to resize.\n    :param size: The requested output size in pixels, given as a\n                 (width, height) tuple.\n    :param method: Resampling method to use. Default is\n                   :py:attr:`~PIL.Image.Resampling.BICUBIC`.\n                   See :ref:`concept-filters`.\n    :return: An image.\n    \"\"\"\n\n    if image.height == 0:\n        return Image.new(image.mode, (size[0], 0))\n    im_ratio = image.width / image.height\n    if size[1] == 0:\n        return Image.new(image.mode, (0, 0))\n    dest_ratio = size[0] / size[1]\n\n    if im_ratio != dest_ratio:\n        if im_ratio > dest_ratio:\n            new_height = round(image.height / image.width * size[0])\n            if new_height != size[1]:\n                size = (size[0], new_height)\n        else:\n            new_width = round(image.width / image.height * size[1])\n            if new_width != size[0]:\n                size = (new_width, size[1])\n    if min(size) == 0:\n        return Image.new(image.mode, size)\n    return image.resize(size, resample=method)\n\ndef pad(\n    image: Image.Image,\n    size: tuple[int, int],\n    method: int = Image.Resampling.BICUBIC,\n    color: str | int | tuple[int, ...] | None = None,\n    centering: tuple[float, float] = (0.5, 0.5),\n) -> Image.Image:\n    \"\"\"\n    Returns a resized and padded version of the image, expanded to fill the\n    requested aspect ratio and size.\n\n    :param image: The image to resize and crop.\n    :param size: The requested output size in pixels, given as a\n                 (width, height) tuple.\n    :param method: Resampling method to use. Default is\n                   :py:attr:`~PIL.Image.Resampling.BICUBIC`.\n                   See :ref:`concept-filters`.\n    :param color: The background color of the padded image.\n    :param centering: Control the position of the original image within the\n                      padded version.\n\n                          (0.5, 0.5) will keep the image centered\n                          (0, 0) will keep the image aligned to the top left\n                          (1, 1) will keep the image aligned to the bottom\n                          right\n    :return: An image.\n    \"\"\"\n\n    resized = contain(image, size, method)\n    if resized.size == size:\n        out = resized\n    else:\n        out = _new_with_fill(resized, size, color)\n        if resized.width != size[0]:\n            x = round((size[0] - resized.width) * max(0, min(centering[0], 1)))\n            out.paste(resized, (x, 0))\n        else:\n            y = round((size[1] - resized.height) * max(0, min(centering[1], 1)))\n            out.paste(resized, (0, y))\n    return out\n",
+  "pillow_version": "13.0.0",
+  "jpeg_library": "6.2",
+  "augmentations_at_inference": false,
+  "color_constancy_or_CLAHE": false,
+  "mobile_preprocessing_status": "NOT_INTEGRATED; Python reference tested; portable preparedRGB normalization contract supplied; native decoder/EXIF/Lanczos/JPEG parity remains required",
+  "portable_implementations": {
+    "Python_reference": "Tested exact pixels and normalization for32original development-validation images",
+    "Dart_contract": "Supplied, not compiled or run; SDK unavailable",
+    "C_normalization_primitive": "Supplied, not compiled or run; C compiler unavailable; raw decoder/resizer not implemented"
+  }
+}

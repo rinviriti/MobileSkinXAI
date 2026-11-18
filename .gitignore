@@ -1,0 +1,46 @@
+# Licensed datasets and private per-image/patient records stay local.
+dataset/
+.private/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+# Environments, credentials, platform caches and generated files.
+.venv*/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.mobileprovision
+**/key.properties
+**/.dart_tool/
+**/build/
+**/.gradle/
+**/Pods/
+**/.symlinks/
+**/ephemeral/
+**/Frameworks/
+**/*.xcframework/
+**/.flutter-plugins-dependencies
+**/local.properties
+# Training weights/caches are not public; one verified reference is deliberate.
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.npy
+*.npz
+!deployment/verification/student_reference.pt
+final_training/.python/
+final_training/.uv-cache/
+final_training/pretrained/**
+final_training/**/checkpoints/**
+research/**/checkpoints/**
+release_dist/
+
+# Machine-local Flutter generated environment files
+**/flutter_export_environment.sh
+**/Generated.xcconfig

@@ -1,0 +1,27 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "status": "PASS",
+  "images": [
+    {
+      "image": "ISIC_0012660_downsampled",
+      "max_abs_logit": 3.24249267578125e-05,
+      "max_abs_probability": 3.562308847904205e-08
+    },
+    {
+      "image": "ISIC_0013258_downsampled",
+      "max_abs_logit": 6.318092346191406e-06,
+      "max_abs_probability": 1.7881393432617188e-06
+    },
+    {
+      "image": "ISIC_0024504",
+      "max_abs_logit": 1.6689300537109375e-05,
+      "max_abs_probability": 3.5762786865234375e-07
+    },
+    {
+      "image": "ISIC_0025811",
+      "max_abs_logit": 3.6656856536865234e-05,
+      "max_abs_probability": 1.0013580322265625e-05
+    }
+  ],
+  "training_performed": false
+}

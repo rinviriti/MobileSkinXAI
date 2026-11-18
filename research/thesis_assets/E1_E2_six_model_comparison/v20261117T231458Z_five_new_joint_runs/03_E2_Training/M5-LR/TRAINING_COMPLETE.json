@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "stop_reason": "early_stopping_patience",
+  "stop_epoch": 14,
+  "controller_revision": "engine_amended_v2",
+  "protocol_amendment_id": "TEACHER_AMENDMENT_20261118T003127Z",
+  "original_teacher_qualified": false,
+  "model": "M5-LR",
+  "epochs": 14,
+  "best_epoch": 8,
+  "best_PAD_validation_lesion_F1": 0.7305275287052387,
+  "training_seconds": 713.1870479069985,
+  "peak_allocated_GiB": 0.5472183227539062,
+  "best_checkpoint": "research/thesis_assets/E1_E2_six_model_comparison/v20261117T231458Z_five_new_joint_runs/03_E2_Training/M5-LR/checkpoints/best.pt",
+  "best_checkpoint_sha256": "5bed9eb03a3f3ae3d17ea4fd5a81bd5b9795696b690ecff81096ee57c1eba060",
+  "last_checkpoint_sha256": "071df84bff8118ef2faa97de8ad3b0f96097b7d3e2c4c7dc16c70ce562b67bbb",
+  "parameters": 2498148,
+  "teacher_checkpoint": "research/thesis_assets/E1_E2_six_model_comparison/v20261117T231458Z_five_new_joint_runs/03_E2_Training/M4/checkpoints/best.pt",
+  "teacher_sha256": "3f9712101fa659d47497dcab22fa3f5d723e42c8a1e296a2fc30cabf4efd8cab",
+  "student_start_sha256": "54abdab247118cd6801402932a1cc37fad9a0d81813013ce4ce0bd8e395b4afc",
+  "budget_kind": "up to40additional epochs from completed joint M3"
+}

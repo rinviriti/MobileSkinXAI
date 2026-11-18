@@ -1,0 +1,95 @@
+{
+  "project_id": "MobileSkinXAI_final_v20261117T061722Z_f5055bd9",
+  "id": "M2",
+  "name": "EfficientNet-Lite0",
+  "architecture": "tf_efficientnet_lite0.in1k",
+  "seed": 42,
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "input_size": [
+    3,
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "data_root": "dataset/ISIC2019/preprocessed/rgb224_letterbox_gray114_v1/full",
+  "split_manifest": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/manifests/ISIC2019_training_evaluation.csv",
+  "batch_size": 16,
+  "batch_size_fallbacks": [
+    8,
+    4
+  ],
+  "num_workers": 4,
+  "optimizer": "AdamW",
+  "weight_decay": 0.0001,
+  "frozen_head_lr": 0.001,
+  "head_lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "frozen_epochs": 5,
+  "max_total_epochs": 30,
+  "budget_kind": "total",
+  "early_stopping": {
+    "patience": 6,
+    "monitor": "validation_macro_f1",
+    "mode": "max",
+    "min_delta": 0.0,
+    "reset_at_stage_transition": true
+  },
+  "fine_tune_scope": "entire_backbone",
+  "freeze_bn_running_stats": true,
+  "mixed_precision": "bf16_if_supported_else_fp16_else_fp32",
+  "scheduler": "none_fixed_stage_learning_rates",
+  "train_class_weighting": "N/(4*n_c), train manifest only",
+  "augmentation": {
+    "shared_geometry": {
+      "horizontal_flip": 0.5,
+      "vertical_flip": 0.5,
+      "rotation_degrees": 15,
+      "fill": 114
+    },
+    "baseline_color_jitter": 0.08,
+    "strong_color_jitter": [
+      0.2,
+      0.2,
+      0.15,
+      0.05
+    ],
+    "strong_grayscale_probability": 0.1
+  },
+  "checkpoint_dir": "final_training/phase5a/v20261117T061722Z_f5055bd9/runs/M2_seed42/checkpoints",
+  "initialization": {
+    "kind": "fresh_official_imagenet",
+    "official_repo": "timm/tf_efficientnet_lite0.in1k",
+    "artifact_dir": "final_training/pretrained/M2",
+    "new_four_class_head": true
+  },
+  "validation": {
+    "gradient": false,
+    "augment": false,
+    "loss_weighting": "none"
+  },
+  "test_access": "not loaded by trainer",
+  "external_access": "not loaded by trainer",
+  "dataset_version": "v20261117T060846Z_608314c8",
+  "dataset_release": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8",
+  "external_evaluation_manifest": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/manifests/PADUFES20_external_evaluation.csv",
+  "evaluation_scoring_units": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/evaluation_scoring_units.csv",
+  "dataset_protocol": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/DATASET_PROTOCOL.json",
+  "max_finetune_epochs": 25,
+  "preparation_status": "awaiting_Phase5B_training_authorization"
+}

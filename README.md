@@ -1,245 +1,63 @@
-# 🩺 MobileSkinXAI
+# MobileSkinXAI
 
-**An Explainable Cross-Dataset Lightweight Deep Learning Framework for Mobile-Based Skin Cancer Screening**
+**MobileSkinXAI: An Explainable Cross-Dataset Lightweight Deep Learning Framework for Mobile-Based Skin Cancer Screening.**
 
-MobileSkinXAI is a thesis-oriented Medical AI project focused on building a lightweight, explainable, and mobile-deployable skin lesion classification system.
+Research prototype for NV, MEL, BCC and SCC classification. It is not a medical diagnosis or a clinically validated screening product. Genuine offline Grad-CAM figures are included; on-device Grad-CAM is NOT implemented.
 
-The project aims to combine **deep learning**, **cross-dataset validation**, **Explainable AI (XAI)**, and **Flutter-based mobile deployment** to support research in trustworthy and accessible healthcare AI.
+## Start here
 
----
+- [Deployment guide](docs/DEPLOYMENT_GUIDE.md): use the existing Flutter UI and the frozen, validation-selected trained model.
+- [Results summary](docs/RESULTS_SUMMARY.md): measured six-model source-only/joint-domain comparisons.
+- [Progress and verification](docs/PROGRESS_REPORT.md): what passed, what remains unverified.
+- [Publication blockers](docs/PUBLICATION_BLOCKERS.md): GitHub write access and unexecuted mobile CI gates.
+- [Data/reproducibility](docs/DATA_REPRODUCTION.md) and [licenses/attribution](docs/DATA_AND_ARTIFACT_LICENSES.md).
 
-## 🎯 Project Goal
+## Verified deployment candidate
 
-The goal of this project is to develop a lightweight AI framework that can classify skin lesion images, explain model decisions using visual XAI techniques, and run efficiently on mobile devices.
+**MobileSkinXAI-Enhanced (LR Control), E2**, selected on PAD development-validation macro-F1 before final test evaluation. It remains a single MobileNetV4-Conv-Small inference graph (2,498,148parameters); teacher/gates/losses are training-only. The ordinary MobileNetV4 reference's higher PAD test point estimate did not replace this selection.
 
-This project is being developed as an undergraduate thesis with the goal of preparing a publication-quality research manuscript.
+Canonical model: `app/flutter/assets/models/e2_lr_control_v20261118/model_float32.tflite` — **10,073,864bytes**, SHA256 `8b6e19f3d8d0dd9c3b798a2cf99c0525079b9de4ea2f5d1708dd928a718412f3`.
 
----
+Input:float32NHWC[1,224,224,3], normalized RGB. Output:float32[1,4] **logits**, in NV/MEL/BCC/SCC order. The app applies stable softmax once. Native libjpeg-turbo3.2.0 reproduces EXIF/RGB, Lanczos gray114letterboxing and the original JPEG95/4:4:4 roundtrip before ImageNet normalization. Simply dividing pixels by255 is wrong. Float16 exports failed fixed numerical tolerances and are NOT included for deployment; INT8 was not fitted.
 
-## 🧠 Research Focus
+Linux verification:32development-image exact preprocessing,26format/orientation fixtures, actual Flutter interpreter parity on the original four cases,5application tests. Android/iPhone physical execution and camera acquisition remain to be verified. A release XCFramework, when present, is a CI-built artifact rather than proof of physical-device or clinical performance. HEIC/HEIF is unsupported; there is no silent conversion fallback.
 
-* Skin lesion classification
-* Cross-dataset generalization
-* Lightweight deep learning
-* Explainable AI using Grad-CAM
-* TensorFlow Lite model conversion
-* Flutter-based mobile deployment
-* Medical image analysis
+## Actual frozen results
 
----
+E1=ISIC-only, zero-shot transfer to PAD. E2=supervised joint ISIC+PAD learning; **not zero-shot domain generalization**. Both use the same current PAD test partition:261images,205declared lesion units,126patients, including7MEL and28SCC units. All PAD findings are **POST-HOC EXPLORATORY** because earlier PAD outcomes influenced research direction.
 
-## 🗂️ Datasets
+|Model|E1 ISIC macro-F1|E1 fixed PAD macro-F1|E2 ISIC macro-F1|E2 fixed PAD macro-F1|
+|---|---:|---:|---:|---:|
+|MobileNetV3-Small|0.6541|0.3839|0.6380|0.6762|
+|EfficientNet-Lite0|0.6583|0.3214|0.6403|0.7014|
+|MobileNetV4-Conv-Small|0.6853|0.4032|0.6121|0.7100|
+|ConvNeXt-Tiny|0.7168|0.3642|0.6813|0.6936|
+|MobileSkinXAI-Enhanced|0.6927|0.4239|0.6791|0.6722|
+|MobileSkinXAI-Enhanced (LR Control)|0.7103|0.4232|0.6639|0.6965|
 
-This project uses two public skin lesion datasets:
 
-| Dataset         | Purpose                                                      |
-| --------------- | ------------------------------------------------------------ |
-| **ISIC 2019**   | Primary training, validation, and testing dataset            |
-| **PAD-UFES-20** | External validation dataset for cross-dataset generalization |
+These are lesion-level point estimates, not clinical reliability claims or evidence that one seed establishes significance. Historical full-PAD scores are separately tabulated and are not interchangeable with the fixed-subset scores. The original joint ConvNeXt teacher-superiority condition failed; enhanced runs used a documented post-hoc amendment. No enhanced model established PAD superiority over ordinary MobileNetV4; there is no matched E2 teacher-free ablation proving a teacher effect.
 
-> Dataset files are not included in this repository due to size and licensing considerations.
+## Repository layout
 
-Expected local dataset structure:
+- `app/flutter/`: original screen/theme/navigation structure plus real inference service, native codec and versioned model assets.
+- `training/`: exact architecture mapping, sixE2configs, privacy-safe frozen assignment digests and prerequisite helpers.
+- `final_training/`, `scripts/`, selected versioned `research/.../code/`: archived original guarded research implementations; no automatic training on import from README commands.
+- `evaluation/`: aggregate tables/CSV, confusion matrices, curves, class-wise specificity/precision/recall/F1 and reports.
+- `figures/`: actual architecture schematics, licensed anonymous examples, genuine Grad-CAM and headless app screenshots when generated.
+- `deployment/verification/`: exact model provenance, inference-only PyTorch reference, preprocessing specification and parity tools/reports. The canonical TFLite binary is stored once in app assets.
+- `docs/`: scientific limitations, deployment, source-data rights and progress.
 
-```text
-dataset/
-├── ISIC2019/
-│   ├── raw/
-│   │   ├── images/
-│   │   └── metadata/
-│   ├── processed/
-│   └── splits/
-│
-└── PADUFES20/
-    ├── raw/
-    │   ├── images/
-    │   └── metadata/
-    ├── processed/
-    └── splits/
+No full datasets, patient/demographic records, training caches or virtual environments are distributed. Only the bounded, separately attributed anonymous fixture/example images described in the license inventory are included. The empty legacy model asset is preserved for repository history but is never registered or used; the complete release archive excludes it.
+
+## Reproduce engineering checks
+
+Use Python3.11 and [verification requirements](deployment/verification/requirements.txt) for CPU PyTorch/LiteRT parity. No pretrained download is needed for the supplied inference reference. From the repository root:
+
+```sh
+python scripts/release_integrity.py
+python deployment/verification/prepare_goldens.py
+python deployment/verification/verify_model.py
 ```
 
----
-
-## 🏗️ Repository Structure
-
-```text
-MobileSkinXAI/
-│
-├── app/
-│   └── flutter/
-│
-├── config/
-│
-├── dataset/
-│   ├── ISIC2019/
-│   └── PADUFES20/
-│
-├── docs/
-│
-├── evaluation/
-│
-├── experiments/
-│   ├── exp01_baseline/
-│   ├── exp02_preprocessing/
-│   ├── exp03_attention/
-│   └── exp04_tflite/
-│
-├── figures/
-├── logs/
-├── models/
-├── notebooks/
-├── paper/
-├── preprocessing/
-├── results/
-├── thesis/
-├── tflite/
-├── training/
-├── xai/
-│
-├── Research_Plan.md
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🔬 Proposed Methodology
-
-```text
-ISIC 2019 Dataset
-        ↓
-Data Cleaning and Preprocessing
-        ↓
-Class Distribution Analysis
-        ↓
-Train / Validation / Test Split
-        ↓
-Lightweight CNN Model Training
-        ↓
-Model Evaluation
-        ↓
-Grad-CAM Explainability
-        ↓
-External Validation on PAD-UFES-20
-        ↓
-TensorFlow Lite Conversion
-        ↓
-Flutter Mobile App Deployment
-```
-
----
-
-## 🤖 Planned Models
-
-The project will compare multiple lightweight and mobile-friendly architectures:
-
-* MobileNetV2
-* MobileNetV3-Small
-* MobileNetV3-Large
-* EfficientNet-Lite
-* EfficientNetV2-B0
-
-The final model will be selected based on:
-
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* ROC-AUC
-* Model size
-* Inference time
-* Mobile deployment suitability
-
----
-
-## 📊 Evaluation Plan
-
-The model will be evaluated using:
-
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* Confusion Matrix
-* ROC Curve
-* PR Curve
-* AUC Score
-* Cross-dataset performance
-* Mobile inference latency
-* Model size after TensorFlow Lite conversion
-
----
-
-## 🔥 Explainable AI
-
-MobileSkinXAI will include explainability through:
-
-* Grad-CAM
-* Grad-CAM visualization overlays
-* Prediction confidence interpretation
-* Class-wise explanation examples
-
-The goal is to make the model prediction more transparent and interpretable.
-
----
-
-## 📱 Mobile Deployment
-
-The selected model will be converted into **TensorFlow Lite** format and integrated into a **Flutter mobile application**.
-
-Planned app features:
-
-* Upload image from gallery
-* Capture image using camera
-* Skin lesion prediction
-* Confidence score
-* Grad-CAM explanation
-* Class description
-* Medical disclaimer
-* Offline inference support
-
----
-
-## 🗓️ Two-Month Thesis Timeline
-
-| Week   | Task                                                         |
-| ------ | ------------------------------------------------------------ |
-| Week 1 | Research design, dataset setup, literature review            |
-| Week 2 | Dataset cleaning, preprocessing, class distribution analysis |
-| Week 3 | Baseline model training and evaluation                       |
-| Week 4 | Lightweight model comparison                                 |
-| Week 5 | Explainable AI implementation and external validation        |
-| Week 6 | TensorFlow Lite conversion and Flutter app integration       |
-| Week 7 | Thesis writing, figures, tables, and result analysis         |
-| Week 8 | Final thesis polishing and journal paper draft preparation   |
-
----
-
-## 📌 Expected Contributions
-
-* A lightweight skin lesion classification model suitable for mobile deployment
-* Cross-dataset evaluation using ISIC 2019 and PAD-UFES-20
-* Explainable AI visualizations for model transparency
-* TensorFlow Lite model conversion
-* Flutter-based mobile application prototype
-* Thesis and publication-ready experimental documentation
-
----
-
-## ⚠️ Disclaimer
-
-This project is developed for **educational and research purposes only**.
-
-It is **not a certified medical device** and must not be used for clinical diagnosis, treatment, or medical decision-making.
-
-Always consult qualified healthcare professionals for medical advice.
-
----
-
-## 👩‍💻 Developer
-
-**Rinvi Jaman Riti**
-Computer Science & Engineering
-Daffodil International University
-
-Research interests: Medical AI, Computer Vision, Explainable AI, Deep Learning, and Mobile Healthcare AI.
+For Flutter/iPhone and native codec commands, follow the deployment guide. Research retraining additionally requires licensed datasets and locally reconstructed/frozen metadata; public hash-based membership records do not waive the original data-approval locks. No training is started by these verification commands.

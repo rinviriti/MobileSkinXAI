@@ -1,0 +1,43 @@
+Model,Metric,E1 → ISIC,E1 → PAD,E2 → ISIC,E2 → PAD
+MobileNetV3-Small,Accuracy (%),84.2365,51.2195,83.3216,81.9512
+MobileNetV3-Small,Macro-F1,0.6541,0.3839,0.6380,0.6762
+MobileNetV3-Small,Balanced accuracy (%),65.6163,49.9488,63.7268,63.7065
+MobileNetV3-Small,NV recall (%),89.7233,90.2439,91.4032,82.9268
+MobileNetV3-Small,MEL recall (%),71.5789,57.1429,49.4737,57.1429
+MobileNetV3-Small,BCC recall (%),80.1105,48.8372,85.0829,96.8992
+MobileNetV3-Small,SCC recall (%),21.0526,3.5714,28.9474,17.8571
+EfficientNet-Lite0,Accuracy (%),81.5623,34.6341,82.8994,83.4146
+EfficientNet-Lite0,Macro-F1,0.6583,0.3214,0.6403,0.7014
+EfficientNet-Lite0,Balanced accuracy (%),68.5194,40.1323,64.5581,64.5384
+EfficientNet-Lite0,NV recall (%),87.6482,82.9268,88.4387,87.8049
+EfficientNet-Lite0,MEL recall (%),67.3684,42.8571,64.2105,42.8571
+EfficientNet-Lite0,BCC recall (%),69.0608,24.0310,84.5304,95.3488
+EfficientNet-Lite0,SCC recall (%),50.0000,10.7143,21.0526,32.1429
+MobileNetV4-Conv-Small,Accuracy (%),85.2217,60.4878,84.0957,80.0000
+MobileNetV4-Conv-Small,Macro-F1,0.6853,0.4032,0.6121,0.7100
+MobileNetV4-Conv-Small,Balanced accuracy (%),67.4786,43.7812,59.2578,67.8399
+MobileNetV4-Conv-Small,NV recall (%),91.6996,87.8049,94.3676,87.8049
+MobileNetV4-Conv-Small,MEL recall (%),62.1053,14.2857,48.4211,71.4286
+MobileNetV4-Conv-Small,BCC recall (%),84.5304,65.8915,78.4530,90.6977
+MobileNetV4-Conv-Small,SCC recall (%),31.5789,7.1429,15.7895,21.4286
+ConvNeXt-Tiny,Accuracy (%),86.6995,49.2683,86.4884,81.4634
+ConvNeXt-Tiny,Macro-F1,0.7168,0.3642,0.6813,0.6936
+ConvNeXt-Tiny,Balanced accuracy (%),68.9642,48.8580,66.9048,68.0054
+ConvNeXt-Tiny,NV recall (%),93.3794,100.0000,92.9842,85.3659
+ConvNeXt-Tiny,MEL recall (%),62.6316,42.8571,64.2105,71.4286
+ConvNeXt-Tiny,BCC recall (%),85.6354,41.8605,86.7403,93.7984
+ConvNeXt-Tiny,SCC recall (%),34.2105,10.7143,23.6842,21.4286
+MobileSkinXAI-Enhanced,Accuracy (%),84.6587,61.4634,85.5735,80.4878
+MobileSkinXAI-Enhanced,Macro-F1,0.6927,0.4239,0.6791,0.6722
+MobileSkinXAI-Enhanced,Balanced accuracy (%),69.9171,48.3784,67.3249,65.2549
+MobileSkinXAI-Enhanced,NV recall (%),89.4269,92.6829,93.8735,75.6098
+MobileSkinXAI-Enhanced,MEL recall (%),70.5263,28.5714,54.7368,71.4286
+MobileSkinXAI-Enhanced,BCC recall (%),82.8729,65.1163,81.2155,96.1240
+MobileSkinXAI-Enhanced,SCC recall (%),36.8421,7.1429,39.4737,17.8571
+MobileSkinXAI-Enhanced (LR Control),Accuracy (%),86.4884,58.5366,83.9550,81.4634
+MobileSkinXAI-Enhanced (LR Control),Macro-F1,0.7103,0.4232,0.6639,0.6965
+MobileSkinXAI-Enhanced (LR Control),Balanced accuracy (%),70.1434,51.7082,65.7348,64.4949
+MobileSkinXAI-Enhanced (LR Control),NV recall (%),92.8854,95.1220,90.1186,80.4878
+MobileSkinXAI-Enhanced (LR Control),MEL recall (%),63.6842,42.8571,64.7368,57.1429
+MobileSkinXAI-Enhanced (LR Control),BCC recall (%),84.5304,58.1395,81.7680,95.3488
+MobileSkinXAI-Enhanced (LR Control),SCC recall (%),39.4737,10.7143,26.3158,25.0000

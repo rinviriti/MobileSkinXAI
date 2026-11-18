@@ -1,0 +1,81 @@
+name: Verified research and deployment
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install numpy==2.4.6 Pillow==13.0.0 timm==1.0.31 ai-edge-litert==2.3.0
+      - run: python scripts/release_integrity.py
+      - run: python deployment/verification/prepare_goldens.py
+      - run: python deployment/verification/verify_model.py
+      - run: python research/thesis_assets/E1_E2_six_model_comparison/v20261117T231458Z_five_new_joint_runs/code/test_controller_v1.py
+  flutter-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+      - run: sudo apt-get update && sudo apt-get install -y clang cmake ninja-build libgtk-3-dev
+      - run: |
+          python3 deployment/verification/prepare_goldens.py
+          cmake -S app/flutter/packages/mobileskinxai_codec/src -B .private/codec -G Ninja -DCMAKE_C_COMPILER=clang
+          cmake --build .private/codec --target mobileskinxai_codec --parallel 4
+          curl -fL https://github.com/am15h/tflite_flutter_plugin/releases/download/v0.5.0/libtensorflowlite_c-linux.so -o /tmp/libtensorflowlite_c-linux.so
+          echo '4d0de8f2e694102387f85a2c79a91945b547e7e00786f5b57dec4f1ac853cff8  /tmp/libtensorflowlite_c-linux.so' | sha256sum -c -
+          mkdir -p "$FLUTTER_ROOT/bin/cache/artifacts/engine/linux-x64/blobs"
+          cp /tmp/libtensorflowlite_c-linux.so "$FLUTTER_ROOT/bin/cache/artifacts/engine/linux-x64/blobs/"
+      - run: flutter pub get
+        working-directory: app/flutter
+      - run: flutter analyze --no-fatal-infos
+        working-directory: app/flutter
+      - run: flutter test --no-pub --reporter expanded --dart-define=MSX_GOLDEN_MANIFEST=${{ github.workspace }}/.private/golden_manifest.json --dart-define=MSX_CODEC_LIBRARY=${{ github.workspace }}/.private/codec/libmobileskinxai_codec.so
+        working-directory: app/flutter
+  ios-build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.0'
+          channel: stable
+      - run: bash packages/mobileskinxai_codec/build_ios_codec.sh
+        working-directory: app/flutter
+      - run: flutter pub get
+        working-directory: app/flutter
+      - run: flutter build ios --release --no-codesign
+        working-directory: app/flutter
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-ios-codec
+          path: app/flutter/packages/mobileskinxai_codec/ios/Frameworks/MobileSkinXaiCodec.xcframework
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [integrity, flutter-linux, ios-build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-ios-codec
+          path: app/flutter/packages/mobileskinxai_codec/ios/Frameworks/MobileSkinXaiCodec.xcframework
+      - run: python3 scripts/build_release.py --include-ios-framework
+      - name: Publish verified research prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(cat docs/RELEASE_VERSION)
+          gh release create "$VERSION" release_dist/*.zip release_dist/SHA256SUMS.txt --target "$GITHUB_SHA" --prerelease --title "MobileSkinXAI verified research integration" --notes-file docs/RELEASE_NOTES.md

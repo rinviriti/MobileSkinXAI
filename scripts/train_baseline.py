@@ -35,8 +35,8 @@ STD = (0.229, 0.224, 0.225)
 WEIGHTS = MobileNet_V3_Small_Weights.IMAGENET1K_V1
 
 DEFAULT_DATA_DIR = (
-    Path.home()
-    / "Desktop/MobileSkinXAI-Datasets/ISIC2019/preprocessed"
+    Path(__file__).resolve().parents[1]
+    / "dataset/ISIC2019/preprocessed"
     / "rgb224_letterbox_gray114_v1/full"
 )
 DEFAULT_OUTPUT_DIR = (

@@ -1,0 +1,17 @@
+# Native codec implementation
+
+Selected: a small project-owned Dart FFI boundary around **libjpeg-turbo3.2.0**, source commit `c85e6b905bf237038faa936dab160ebfc5da0344`. This is the exact installed Pillow backend release. The source is vendored reproducibly; no existing Flutter codec package was assumed equivalent. Keeping the existing pure-Dart JPEG codec failed measured identity, while this explicitly configured native boundary passes. No new model architecture, decoder hyperparameter search or weight change was made.
+
+Production code: app/flutter/packages/mobileskinxai_codec/. Native APIs: msx_decode, msx_roundtrip, msx_error, msx_free. TurboJPEG opaque handles are local to each call. Inputs are bounded to64MiB and50millionpixels; dimensions/CMYK/YCCK are rejected before allocating RGB. Buffers are copied to Dart-owned typed data and always released in finally; native errors destroy handles and free buffers. Corrupted JPEG and unsupported-format paths are tested. This is not a full security/sanitizer certification.
+
+FAST_DCT=0, FAST_UPSAMPLE=0, RGB output; no ICC application. Historical encoder:quality95,4:4:4, FAST_DCT=0, OPTIMIZE=0, followed by the same decoder. EXIF orientation is applied once in Dart using bounded TIFF parsing and explicit integer-coordinate mappings, preserving original dimensions until orientation. RGB order is retained. The already validated Lanczos/letterbox/float32-normalization algorithm is unchanged.
+
+8-bit PNG uses the pinned lossless Dart decoder, with the same orientation/RGB/geometry and native historical JPEG roundtrip. Both JPEG and PNG are represented in the32real development cases ({'JPEG': 16, 'PNG': 16}). HEIC/HEIF is NOT decoded or silently converted. CMYK/YCCK JPEG,16-bit PNG, oversized/invalid inputs and unverified formats fail honestly. Highest observed development source area:2979076pixels. Arbitrary unseen files and camera acquisition remain outside these bounded tests.
+
+The scalar-C libjpeg build disables SIMD for portable behavior. Host build used Zig0.17.1/CMake4.4.5/Ninja1.13.2 installed in/tmp, with ZIG_GLOBAL_CACHE_DIR explicitly set to a writable temporary cache. The CMake integration uses upstream-supported ExternalProject_Add, not an unsupported vendor add_subdirectory patch. Successful command/configuration logs and pinned source are preserved. The production package itself was built and used in the final Flutter app tests.
+
+Linux: native package build and real Flutter execution PASS. Android: Gradle/NDK CMake source configuration provided, minAPI26, compileSDK36,16KB linker alignment requested; actual build blocked by missing Android SDK/NDK, so compatibility is NOT certified. iOS: build_ios_codec.sh produces arm64device/simulator XCFrameworks on macOS before pod install; source/podspec/link-retention flags provided but Xcode build and device invocation remain UNVERIFIED. Windows native packaging is not implemented; WSL/Linux development is verified.
+
+IJG/BSD/zlib source notices and Pillow notices are preserved in package LICENSE, THIRD_PARTY_NOTICES.md, PILLOW_LICENSE.txt and vendor source. Flutter's license collector can include the package LICENSE. The wrapper is isolated from UI code and model weights.
+
+HOST_CODEC_TIMING.json records one host-JIT observation per fixed case: decode4.177–13.889ms, geometry13.211–76.103ms, roundtrip0.868–1.320ms. These are not phone latency, throughput guarantees or memory benchmarks.

@@ -1,0 +1,56 @@
+{
+  "id": "M4",
+  "architecture": "convnext_tiny.fb_in1k",
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "seed": 42,
+  "input": [
+    3,
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "batch_size": 16,
+  "steps_per_epoch": 727,
+  "ISIC_per_batch": 8,
+  "PAD_per_batch": 8,
+  "class_sampling": "none; uniform shuffled image cycles within each domain",
+  "weight_decay": 0.0001,
+  "frozen_epochs": 5,
+  "fine_epochs": 30,
+  "frozen_head_lr": 0.001,
+  "head_lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "patience": 6,
+  "checkpoint_metric": "PAD validation declared-lesion macro-F1",
+  "freeze_BN_running_stats": true,
+  "gradient_clip": 1.0,
+  "mixed_precision": "CUDA BF16",
+  "inference": "Same original M3 prepared224RGB JPEG ->ToTensor->ImageNet normalization; no raw reprocessing, augmentation or TTA",
+  "augmentations": "Training only: H/V0.5, rotationU(-10,10) expand+letterbox; brightness/contrastp0.8 U(.9,1.1); WBp0.5 gainsU(.97,1.03)geomeannormalized; JPEGp0.4quality75-95; blurp0.2radius.1-.6; framingp0.3scale.9-1withoutcrop",
+  "weighting": "clip(sqrt(1/(4*pi_c)),.5,2) where pi=.5*n_ISIC_c/N_ISIC+.5*n_PAD_c/N_PAD, training only",
+  "pretrained_artifact": "final_training/pretrained/M4/model.safetensors",
+  "class_weights": [
+    0.8080096342005048,
+    1.3791351397297678,
+    0.7912097358293197,
+    1.7021330085984685
+  ],
+  "name": "ConvNeXt-Tiny",
+  "enhanced": false
+}

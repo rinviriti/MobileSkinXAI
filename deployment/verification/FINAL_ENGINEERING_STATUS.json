@@ -1,0 +1,11 @@
+{
+  "preprocessing": "PASS_32_development_plus26engineering_fixtures",
+  "Flutter_actual_Linux_runtime": "PASS_original4",
+  "application_tests": "PASS_5",
+  "Flutter_analyze": "0errors0warnings5existing_deprecation_infos_exit1",
+  "Android_build": "BLOCKED_missing_Android_SDK",
+  "iOS_build_and_device": "NOT_RUN_macOS_Xcode_unavailable",
+  "HEIC": "UNSUPPORTED",
+  "on_device_GradCAM": false,
+  "primary_model": "MobileSkinXAI-Enhanced (LR Control)"
+}

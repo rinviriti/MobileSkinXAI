@@ -1,0 +1,13 @@
+# Dataset_Composition_and_Frozen_Splits
+
+Counts are images except explicitly named patient/scoring-unit columns. PAD is patient-disjoint; ISIC biological patient independence is not guaranteed. Declared scoring units are metadata groups, not guaranteed unique biological lesions.
+
+| Dataset | Partition | Images | Patients | Declared scoring units | NV | MEL | BCC | SCC |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ISIC | Train | 11632 | Unavailable | 6308 | 6838 | 2611 | 1799 | 384 |
+| ISIC | Validation | 2835 | Unavailable | 1500 | 1635 | 586 | 519 | 95 |
+| ISIC | Test | 2703 | Unavailable | 1421 | 1609 | 528 | 463 | 103 |
+| PAD | Train | 781 | 550 | 616 | 139 | 30 | 503 | 109 |
+| PAD | Validation | 261 | 127 | 205 | 47 | 10 | 167 | 37 |
+| PAD | Test | 261 | 126 | 205 | 47 | 10 | 167 | 37 |
+

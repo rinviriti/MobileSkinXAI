@@ -1,0 +1,20 @@
+name: mobileskinxai_codec
+description: Verified fixed-policy native JPEG preprocessing for MobileSkinXAI.
+version: 1.0.0
+publish_to: none
+environment:
+  sdk: ">=3.12.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: 2.2.0
+  image: 4.10.1
+flutter:
+  plugin:
+    platforms:
+      android:
+        ffiPlugin: true
+      ios:
+        ffiPlugin: true
+      linux:
+        ffiPlugin: true

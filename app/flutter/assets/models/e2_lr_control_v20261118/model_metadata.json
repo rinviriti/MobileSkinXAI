@@ -1,0 +1,30 @@
+{
+  "model_name": "MobileSkinXAI-Enhanced (LR Control)",
+  "model_version": "E2 LR Control Float32 v20261118",
+  "checkpoint_sha256": "5bed9eb03a3f3ae3d17ea4fd5a81bd5b9795696b690ecff81096ee57c1eba060",
+  "tflite_sha256": "8b6e19f3d8d0dd9c3b798a2cf99c0525079b9de4ea2f5d1708dd928a718412f3",
+  "input_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "output_shape": [
+    1,
+    4
+  ],
+  "dtype": "float32",
+  "input_layout": "NHWC",
+  "output": "logits",
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "parameters": 2498148,
+  "codec": "libjpeg-turbo3.2.0, ISLOW, fancy upsample; JPEG95 444 roundtrip",
+  "scores": "uncalibrated softmax",
+  "GradCAM_available": false,
+  "source_metadata_sha256": "71c05b2a9af3b85ef05c4562cba84c57ab42d3a566cec946bf9e89c4d231ad23"
+}
