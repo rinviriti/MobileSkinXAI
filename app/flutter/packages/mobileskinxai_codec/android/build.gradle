@@ -1,0 +1,16 @@
+group 'org.mobileskinxai.codec'
+version '1.0.0'
+buildscript {
+    repositories { google(); mavenCentral() }
+    dependencies { classpath 'com.android.tools.build:gradle:8.6.1' }
+}
+apply plugin: 'com.android.library'
+android {
+    namespace 'org.mobileskinxai.codec'
+    compileSdk 36
+    defaultConfig {
+        minSdk 26
+        externalNativeBuild { cmake { arguments '-DANDROID_STL=none' } }
+    }
+    externalNativeBuild { cmake { path '../src/CMakeLists.txt'; version '3.22.1' } }
+}

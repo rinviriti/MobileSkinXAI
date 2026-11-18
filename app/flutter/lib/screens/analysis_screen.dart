@@ -1,10 +1,11 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import '../services/skin_classifier.dart';
 
 import 'results_screen.dart';
 
-class AnalysisScreen extends StatelessWidget {
+class AnalysisScreen extends StatefulWidget {
   const AnalysisScreen({
     super.key,
     required this.imageBytes,
@@ -15,6 +16,43 @@ class AnalysisScreen extends StatelessWidget {
   final Uint8List imageBytes;
   final String imageName;
   final String imageSource;
+
+  @override
+  State<AnalysisScreen> createState() => _AnalysisScreenState();
+}
+
+class _AnalysisScreenState extends State<AnalysisScreen> {
+  final SkinClassifier _classifier = SkinClassifier();
+  bool _analyzing = false;
+  Uint8List get imageBytes => widget.imageBytes;
+  String get imageName => widget.imageName;
+  String get imageSource => widget.imageSource;
+
+  Future<void> _analyze() async {
+    if (_analyzing) return;
+    setState(() => _analyzing = true);
+    try {
+      final prediction = await _classifier.predictBytes(imageBytes);
+      if (!mounted) return;
+      await Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) =>
+        ResultsScreen(imageBytes: imageBytes, imageName: imageName,
+          predictedClass: prediction.label, probabilities: prediction.probabilities,
+          inferenceTimeMs: prediction.inferenceTimeMs, modelVersion: prediction.modelVersion)));
+    } catch (error) {
+      if (!mounted) return;
+      final message = error is FormatException ? error.message.toString() :
+        'Unable to analyze this image. Check the local model and native codec installation.';
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    } finally {
+      if (mounted) setState(() => _analyzing = false);
+    }
+  }
+
+  @override
+  void dispose() {
+    _classifier.dispose();
+    super.dispose();
+  }
 
   static const Color primary = Color(0xFF176B65);
   static const Color heading = Color(0xFF213A38);
@@ -194,7 +232,7 @@ class AnalysisScreen extends StatelessWidget {
                 ),
                 SizedBox(width: 7),
                 Text(
-                  'Not yet available',
+                  'Local research model',
                   style: TextStyle(
                     color: Color(0xFF926117),
                     fontSize: 12,
@@ -206,9 +244,8 @@ class AnalysisScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           const Text(
-            'The classification model is still being '
-            'developed. Analysis will become available '
-            'after training, validation, and mobile integration.',
+            'The selected classifier runs locally. Its scores are '
+            'uncalibrated research outputs, not a medical diagnosis.',
             style: TextStyle(color: muted, fontSize: 13, height: 1.6),
           ),
         ],
@@ -230,9 +267,8 @@ class AnalysisScreen extends StatelessWidget {
           SizedBox(width: 12),
           Expanded(
             child: Text(
-              'This prototype displays the selected image '
-              'locally. It does not upload the image to a '
-              'server or perform medical analysis.',
+              'This prototype classifies the selected image '
+              'locally. It does not upload the image to a server.',
               style: TextStyle(color: heading, fontSize: 12, height: 1.6),
             ),
           ),
@@ -273,14 +309,14 @@ class AnalysisScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton.icon(
-                onPressed: null,
+                onPressed: _analyzing ? null : _analyze,
                 icon: const Icon(Icons.analytics_outlined),
-                label: const Text('Analyze image'),
+                label: Text(_analyzing ? 'Analyzing…' : 'Analyze image'),
               ),
             ),
             const SizedBox(height: 8),
             const Text(
-              'Analysis will be available after model integration.',
+              'JPEG and 8-bit PNG supported. HEIC is not converted.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 11, color: muted),
             ),

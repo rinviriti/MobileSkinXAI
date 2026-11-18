@@ -1,0 +1,7 @@
+Model,PAD gain (pp),PAD CI low (pp),PAD CI high (pp),ISIC change (pp)
+MobileNetV3-Small,29.23,15.93,39.19,-1.60
+EfficientNet-Lite0,38.00,22.96,49.88,-1.79
+MobileNetV4-Conv-Small,30.68,19.26,39.78,-7.32
+ConvNeXt-Tiny,32.94,21.85,44.03,-3.55
+MobileSkinXAI-Enhanced,24.84,12.74,34.81,-1.36
+MobileSkinXAI-Enhanced (LR Control),27.33,15.38,36.94,-4.64

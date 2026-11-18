@@ -1,0 +1,100 @@
+{
+  "id": "M5",
+  "architecture": "mobilenetv4_conv_small.e2400_r224_in1k",
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "seed": 42,
+  "input": [
+    3,
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "batch_size": 16,
+  "steps_per_epoch": 727,
+  "ISIC_per_batch": 8,
+  "PAD_per_batch": 8,
+  "class_sampling": "none; uniform shuffled image cycles within each domain",
+  "weight_decay": 0.0001,
+  "frozen_epochs": 0,
+  "fine_epochs": 40,
+  "frozen_head_lr": 0.001,
+  "head_lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "patience": 6,
+  "checkpoint_metric": "PAD validation declared-lesion macro-F1",
+  "freeze_BN_running_stats": true,
+  "gradient_clip": 1.0,
+  "mixed_precision": "CUDA BF16",
+  "inference": "Same original M3 prepared224RGB JPEG ->ToTensor->ImageNet normalization; no raw reprocessing, augmentation or TTA",
+  "augmentations": "Training only: H/V0.5, rotationU(-10,10) expand+letterbox; brightness/contrastp0.8 U(.9,1.1); WBp0.5 gainsU(.97,1.03)geomeannormalized; JPEGp0.4quality75-95; blurp0.2radius.1-.6; framingp0.3scale.9-1withoutcrop",
+  "weighting": "original inverse frequency N_joint/(4*n_joint_class), training labels only; differs from standard E2 mixture-moderated weights",
+  "pretrained_artifact": "final_training/pretrained/M3/model.safetensors",
+  "class_weights": [
+    0.4447828579618747,
+    1.1750283983339644,
+    1.3480668983492614,
+    6.294624746450304
+  ],
+  "name": "MobileSkinXAI-Enhanced",
+  "enhanced": true,
+  "loss": {
+    "lambda_ce": 1.0,
+    "lambda_kd": 0.5,
+    "lambda_consistency": 0.1,
+    "temperature": 4.0,
+    "class_weight_power": 0.5,
+    "confidence_threshold": 0.7,
+    "max_normalized_entropy": 0.6,
+    "max_teacher_js": 0.1,
+    "reliability_js_scale": 0.1,
+    "require_teacher_correct_both_views": true,
+    "epsilon": 1e-08
+  },
+  "augmentation": {
+    "shared_geometry": {
+      "horizontal_flip": 0.5,
+      "vertical_flip": 0.5,
+      "rotation_degrees": 15,
+      "fill": 114
+    },
+    "baseline_color_jitter": 0.08,
+    "strong_color_jitter": [
+      0.2,
+      0.2,
+      0.15,
+      0.05
+    ],
+    "strong_grayscale_probability": 0.1
+  },
+  "student_start": "research/thesis_assets/E1_E2_joint_domain/v20261117T221855Z_supervised_joint_seed42/03_E2_Training/checkpoints/best.pt",
+  "student_sha256": "54abdab247118cd6801402932a1cc37fad9a0d81813013ce4ce0bd8e395b4afc",
+  "teacher_parent": "new M4 E2 best PAD-validation checkpoint; freeze/hash before M5",
+  "teacher_qualification": {
+    "rule": "fresh_M4 validation_macro_f1 > fresh_M3 validation_macro_f1 + min_macro_f1_improvement",
+    "min_macro_f1_improvement": 0.0,
+    "teacher_frozen": true,
+    "teacher_mode": "eval",
+    "no_target_domain_calibration": true
+  },
+  "budget_kind": "up to40additional epochs from completed joint M3",
+  "teacher_checkpoint": "research/thesis_assets/E1_E2_six_model_comparison/v20261117T231458Z_five_new_joint_runs/03_E2_Training/M4/checkpoints/best.pt",
+  "teacher_sha256": "3f9712101fa659d47497dcab22fa3f5d723e42c8a1e296a2fc30cabf4efd8cab",
+  "protocol_amendment_id": "TEACHER_AMENDMENT_20261118T003127Z",
+  "original_teacher_qualified": false
+}

@@ -11,6 +11,7 @@ the primary split and recorded separately.
 No images or original metadata are modified.
 """
 
+import argparse
 import csv
 import json
 import random
@@ -20,12 +21,7 @@ from pathlib import Path
 SEED = 42
 CLASSES = ("NV", "MEL", "BCC", "SCC")
 
-DATA_DIR = (
-    Path.home()
-    / "Desktop"
-    / "MobileSkinXAI-Datasets"
-    / "ISIC2019"
-)
+DATA_DIR = Path(__file__).resolve().parents[1] / "dataset" / "ISIC2019"
 
 OUTPUT_DIR = (
     DATA_DIR / "splits" / "lesion_stratified_seed42"
@@ -66,6 +62,20 @@ def print_distribution(name, rows):
 
 
 def main():
+    global DATA_DIR, OUTPUT_DIR, LABEL_FILE, METADATA_FILE
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--data-dir', type=Path, default=DATA_DIR)
+    parser.add_argument('--create-new-split', action='store_true',
+                        help='Explicitly authorize a NEW split; never recovers the identity of a prior split')
+    args = parser.parse_args()
+    if not args.create_new_split:
+        parser.error('Split creation requires --create-new-split. Reuse existing frozen CSVs when available.')
+    DATA_DIR = args.data_dir.expanduser().resolve()
+    OUTPUT_DIR = DATA_DIR / 'splits' / 'lesion_stratified_seed42'
+    LABEL_FILE = DATA_DIR / 'ISIC_2019_Training_GroundTruth.csv'
+    METADATA_FILE = DATA_DIR / 'ISIC_2019_Training_Metadata.csv'
+    if OUTPUT_DIR.exists():
+        raise FileExistsError(f'Preserving existing split directory: {OUTPUT_DIR}')
     if not LABEL_FILE.is_file():
         raise FileNotFoundError(LABEL_FILE)
 
@@ -74,6 +84,10 @@ def main():
 
     labels = read_csv(LABEL_FILE)
     metadata_rows = read_csv(METADATA_FILE)
+    for name, records in [('labels', labels), ('metadata', metadata_rows)]:
+        ids = [row['image'] for row in records]
+        if len(ids) != len(set(ids)):
+            raise ValueError(f'Duplicate image IDs in {name}')
 
     metadata = {
         row["image"]: row
@@ -85,6 +99,10 @@ def main():
     excluded = []
 
     for row in labels:
+        diagnoses = [key for key in row if key != 'image']
+        values = [float(row[key]) for key in diagnoses]
+        if any(value not in (0.0, 1.0) for value in values) or sum(values) != 1.0:
+            raise ValueError(f'Invalid one-hot diagnosis for {row["image"]}')
         selected = [
             label
             for label in CLASSES
@@ -239,6 +257,7 @@ def main():
 
     summary = {
         "random_seed": SEED,
+        "provenance": "newly created with explicit --create-new-split; not a recovered historical split",
         "classes": list(CLASSES),
         "method": "class-stratified lesion-group split",
         "target_group_proportions": {

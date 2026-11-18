@@ -1,0 +1,8 @@
+00:00 +0: loading /tmp/mobileskinxai-release-review/app/flutter/test/home_capture_test.dart
+00:00 +0: /tmp/mobileskinxai-release-review/app/flutter/test/home_capture_test.dart: Capture existing home UI without patient images
+00:00 +1: /tmp/mobileskinxai-release-review/app/flutter/test/home_capture_test.dart: Capture existing home UI without patient images
+00:00 +2: /tmp/mobileskinxai-release-review/app/flutter/test/home_capture_test.dart: Capture existing home UI without patient images
+00:00 +3: /tmp/mobileskinxai-release-review/app/flutter/test/home_capture_test.dart: Capture existing home UI without patient images
+00:00 +4: /tmp/mobileskinxai-release-review/app/flutter/test/classifier_test.dart: Application service: real asset + native raw preprocessing + real TFLite
+00:00 +5: /tmp/mobileskinxai-release-review/app/flutter/test/classifier_test.dart: Application service: real asset + native raw preprocessing + real TFLite
+00:00 +6: All tests passed!

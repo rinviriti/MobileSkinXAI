@@ -33,7 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final pickedFile = await _picker.pickImage(
         source: source,
-        imageQuality: 95,
         requestFullMetadata: false,
       );
 
@@ -161,9 +160,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: Text(
               'MobileSkinXAI is a research prototype. '
-              'Image review is available, while AI '
-              'classification will be enabled after '
-              'the trained model is integrated.',
+              'Classification uses a local research model. '
+              'Scores are not a medical diagnosis; '
+              'unsupported image formats are rejected.',
               style: TextStyle(fontSize: 13, height: 1.5, color: heading),
             ),
           ),

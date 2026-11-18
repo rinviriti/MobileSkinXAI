@@ -1,0 +1,7 @@
+# Verified Linux/Python3.11 deployment-check environment; not required by Flutter.
+numpy==2.4.6
+Pillow==13.0.0
+torch==2.10.0
+torchvision==0.25.0
+timm==1.0.31
+ai-edge-litert==2.3.0

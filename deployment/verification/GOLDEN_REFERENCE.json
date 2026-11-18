@@ -1,0 +1,46 @@
+[
+  {
+    "image": "ISIC_0012660_downsampled",
+    "sha256": "73f3379546881e36b21287f29ef1d91f327c8b1a443193dd16182133a129b82d",
+    "logits": [
+      6.071269512176514,
+      0.3461019694805145,
+      -8.557758331298828,
+      -9.916688919067383
+    ],
+    "split": "ISIC development validation"
+  },
+  {
+    "image": "ISIC_0013258_downsampled",
+    "sha256": "f586bd429595a0935798b15d2615ebe54af8986ff2b4a3df09e82265d354fd02",
+    "logits": [
+      0.3244217336177826,
+      0.4311153292655945,
+      -7.368513584136963,
+      -10.004965782165527
+    ],
+    "split": "ISIC development validation"
+  },
+  {
+    "image": "ISIC_0024504",
+    "sha256": "1dae8e276057edee1397e57f24e1542c11b261bbbfa2cb66e669bfc14cf3b650",
+    "logits": [
+      -4.779572010040283,
+      -6.116539001464844,
+      -0.47310054302215576,
+      -1.4636108875274658
+    ],
+    "split": "ISIC development validation"
+  },
+  {
+    "image": "ISIC_0025811",
+    "sha256": "c3720e1713d4c408f75d83ca34a071a5a03569cfa65b08f3f8815895cf2f238c",
+    "logits": [
+      -6.963822841644287,
+      -7.128321647644043,
+      0.9375693202018738,
+      0.6179450750350952
+    ],
+    "split": "ISIC development validation"
+  }
+]

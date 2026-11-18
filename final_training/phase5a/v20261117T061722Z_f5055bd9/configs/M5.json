@@ -1,0 +1,115 @@
+{
+  "project_id": "MobileSkinXAI_final_v20261117T061722Z_f5055bd9",
+  "id": "M5",
+  "name": "Enhanced MobileNetV4 (candidate)",
+  "architecture": "mobilenetv4_conv_small.e2400_r224_in1k",
+  "seed": 42,
+  "classes": [
+    "NV",
+    "MEL",
+    "BCC",
+    "SCC"
+  ],
+  "input_size": [
+    3,
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "data_root": "dataset/ISIC2019/preprocessed/rgb224_letterbox_gray114_v1/full",
+  "split_manifest": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/manifests/ISIC2019_training_evaluation.csv",
+  "batch_size": 16,
+  "batch_size_fallbacks": [
+    8,
+    4
+  ],
+  "num_workers": 4,
+  "optimizer": "AdamW",
+  "weight_decay": 0.0001,
+  "frozen_head_lr": 0.001,
+  "head_lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "frozen_epochs": 0,
+  "max_total_epochs": 40,
+  "budget_kind": "additional_to_fresh_M3",
+  "early_stopping": {
+    "patience": 6,
+    "monitor": "validation_macro_f1",
+    "mode": "max",
+    "min_delta": 0.0,
+    "reset_at_stage_transition": true
+  },
+  "fine_tune_scope": "entire_backbone",
+  "freeze_bn_running_stats": true,
+  "mixed_precision": "bf16_if_supported_else_fp16_else_fp32",
+  "scheduler": "none_fixed_stage_learning_rates",
+  "train_class_weighting": "N/(4*n_c), train manifest only",
+  "augmentation": {
+    "shared_geometry": {
+      "horizontal_flip": 0.5,
+      "vertical_flip": 0.5,
+      "rotation_degrees": 15,
+      "fill": 114
+    },
+    "baseline_color_jitter": 0.08,
+    "strong_color_jitter": [
+      0.2,
+      0.2,
+      0.15,
+      0.05
+    ],
+    "strong_grayscale_probability": 0.1
+  },
+  "checkpoint_dir": "final_training/phase5a/v20261117T061722Z_f5055bd9/runs/M5_seed42/checkpoints",
+  "initialization": {
+    "kind": "fresh_final_M3_checkpoint",
+    "student_checkpoint": "final_training/phase5a/v20261117T061722Z_f5055bd9/runs/M3_seed42/checkpoints/best.pt",
+    "teacher_checkpoint": "final_training/phase5a/v20261117T061722Z_f5055bd9/runs/M4_seed42/checkpoints/best.pt",
+    "require_completed_final_parents": true
+  },
+  "validation": {
+    "gradient": false,
+    "augment": false,
+    "loss_weighting": "none"
+  },
+  "test_access": "not loaded by trainer",
+  "external_access": "not loaded by trainer",
+  "teacher_qualification": {
+    "rule": "fresh_M4 validation_macro_f1 > fresh_M3 validation_macro_f1 + min_macro_f1_improvement",
+    "min_macro_f1_improvement": 0.0,
+    "teacher_frozen": true,
+    "teacher_mode": "eval",
+    "no_target_domain_calibration": true
+  },
+  "loss": {
+    "lambda_ce": 1.0,
+    "lambda_kd": 0.5,
+    "lambda_consistency": 0.1,
+    "temperature": 4.0,
+    "class_weight_power": 0.5,
+    "confidence_threshold": 0.7,
+    "max_normalized_entropy": 0.6,
+    "max_teacher_js": 0.1,
+    "reliability_js_scale": 0.1,
+    "require_teacher_correct_both_views": true,
+    "epsilon": 1e-08
+  },
+  "dataset_version": "v20261117T060846Z_608314c8",
+  "dataset_release": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8",
+  "external_evaluation_manifest": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/manifests/PADUFES20_external_evaluation.csv",
+  "evaluation_scoring_units": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/evaluation_scoring_units.csv",
+  "dataset_protocol": "research/thesis_assets/final_dataset_release/v20261117T060846Z_608314c8/DATASET_PROTOCOL.json",
+  "max_finetune_epochs": 40,
+  "preparation_status": "awaiting_Phase5B_training_authorization"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "stop_reason": "early_stopping_patience",
+  "stop_epoch": 31,
+  "controller_revision": "engine_fixed_v1",
+  "model": "M4",
+  "epochs": 31,
+  "best_epoch": 25,
+  "best_PAD_validation_lesion_F1": 0.6296331818946661,
+  "training_seconds": 1385.3049486420023,
+  "peak_allocated_GiB": 1.339942455291748,
+  "best_checkpoint": "research/thesis_assets/E1_E2_six_model_comparison/v20261117T231458Z_five_new_joint_runs/03_E2_Training/M4/checkpoints/best.pt",
+  "best_checkpoint_sha256": "3f9712101fa659d47497dcab22fa3f5d723e42c8a1e296a2fc30cabf4efd8cab",
+  "last_checkpoint_sha256": "e9b06e7fde807a3375d6af360415983484ff14201011dbda7f42095add9bb9f0",
+  "parameters": 27823204,
+  "teacher_checkpoint": null,
+  "teacher_sha256": null,
+  "student_start_sha256": null,
+  "budget_kind": "up to5head+30fine epochs"
+}

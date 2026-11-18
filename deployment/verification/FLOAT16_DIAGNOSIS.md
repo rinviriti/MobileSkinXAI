@@ -1,0 +1,9 @@
+# Float16 diagnosis and engineering status
+
+Both Float16-weight conversions succeeded, load in Linux LiteRT, and use47stored Float16 constant tensors. Float32 inputs, outputs and activations remain unchanged. No training, calibration or architecture substitution occurred.
+
+The first storage inspection incorrectly looked only at FlatBuffer Buffer.DataLength. The installed quantizer stores constants in Buffer.Offset/Size regions within the same .tflite file. This caused an inspection assertion before Float16 inference. The original script, error records and console remain preserved. The corrected inspection validates both legal buffer forms and checks every offset fits within the file. Existing exported bytes were reused; no model conversion changes or relaxed thresholds were made.
+
+After that engineering-check correction, numerical parity was actually measured with both XNNPACK/default CPU and built-in reference kernels. All32argmax predictions match, but both Float16 exports FAIL the original absolute-error bounds. The primary has maxlogiterror0.0751133>0.05, meanlogiterror0.015719>0.01, maxprobabilityerror0.0107188>0.01. The comparator has maxprobabilityerror0.0126329>0.01. Reference-kernel results closely agree with default-kernel results, indicating this is not an isolated delegate issue. Weight-storage rounding is consistent with the discrepancy; no specific unsupported conversion operator or class-order failure was found. This does not establish acceptability beyond the fixed inputs.
+
+No threshold relaxation, selective image removal, mixed-precision layer search or test-data iteration was performed. The generated Float16 binaries are diagnostic artifacts only and NOT approved for deployment. Start from the primary Float32 export. If a future Float16 investigation is authorized, predeclare it separately; do not silently promote these files because top-1 agreement alone is100%.

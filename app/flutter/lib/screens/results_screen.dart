@@ -29,7 +29,7 @@ class ResultsScreen extends StatelessWidget {
   static const Color background = Color(0xFFF8FAF9);
 
   static const List<String> classes = [
-    'Benign Nevus',
+    'Melanocytic Nevus',
     'Melanoma',
     'Basal Cell Carcinoma',
     'Squamous Cell Carcinoma',

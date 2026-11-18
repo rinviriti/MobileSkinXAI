@@ -1,0 +1,34 @@
+[
+  {
+    "class": "NV",
+    "prepared_sha256": "d70b4bc8995b34184f8aa88c702ff5de3e47cdd635b21e43b545322f9df9f48d",
+    "dataset": "PAD-UFES-20",
+    "partition": "training",
+    "license": "CC BY4.0, Pacheco et al., DOI10.1016/j.dib.2020.106221",
+    "changes": "RGB letterbox, scale to224, metadata stripped; no patient identifiers"
+  },
+  {
+    "class": "MEL",
+    "prepared_sha256": "90f1308d70528037af8ef659cf900fad3f83cb4078e2a5840fc86b02ffb17d47",
+    "dataset": "PAD-UFES-20",
+    "partition": "training",
+    "license": "CC BY4.0, Pacheco et al., DOI10.1016/j.dib.2020.106221",
+    "changes": "RGB letterbox, scale to224, metadata stripped; no patient identifiers"
+  },
+  {
+    "class": "BCC",
+    "prepared_sha256": "fe7f4dbbf5ac3506172db5160a7de777475a29c877788b8f4f99d4bbdf43f458",
+    "dataset": "PAD-UFES-20",
+    "partition": "training",
+    "license": "CC BY4.0, Pacheco et al., DOI10.1016/j.dib.2020.106221",
+    "changes": "RGB letterbox, scale to224, metadata stripped; no patient identifiers"
+  },
+  {
+    "class": "SCC",
+    "prepared_sha256": "cdff47ef7beefcfe53305477302294b3a3c892fb9e26fd5b84fb64a8de983cfe",
+    "dataset": "PAD-UFES-20",
+    "partition": "training",
+    "license": "CC BY4.0, Pacheco et al., DOI10.1016/j.dib.2020.106221",
+    "changes": "RGB letterbox, scale to224, metadata stripped; no patient identifiers"
+  }
+]

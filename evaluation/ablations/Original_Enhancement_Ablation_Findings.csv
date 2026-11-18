@@ -1,0 +1,6 @@
+Model,Study configuration,Validation macro-F1,MEL recall (%),SCC recall (%)
+MobileNetV4-Conv-Small,Original baseline,0.6832124836967516,61.94539249146758,34.73684210526316
+MobileSkinXAI-Enhanced,Original full recipe,0.6911747422941596,72.18430034129693,36.84210526315789
+MobileSkinXAI-Enhanced,Without hard/continuous reliability weighting,0.690507788071784,73.54948805460751,38.94736842105263
+MobileNetV4-Conv-Small,Teacher-free student consistency,0.6763160539959153,77.81569965870307,42.10526315789473
+MobileNetV4-Conv-Small,Separate source-augmentation intervention,0.6845229544878111,62.28668941979522,41.05263157894737

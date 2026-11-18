@@ -1,0 +1,7 @@
+Model,Parameters (M),MACs (M),Own training (s),Prescribed training (s),Shared parent (s),PAD validation macro-F1,Selected epoch,Policy stop epoch,Actual completed epochs,Checkpoint SHA256
+MobileNetV3-Small,1.522,55.490,731.33,483.10,0.00,0.6374,10,16,23,668a3c800590140f4e4f33325bbd24b2ee65b0bc4d88cf03e4cd1743af96b4e3
+EfficientNet-Lite0,3.376,383.913,623.83,623.83,0.00,0.6680,13,19,19,a36777393a22cf3ba7bb6ccba010f0159460d2fce7f457a7fce6f83c9e215a2b
+MobileNetV4-Conv-Small,2.498,184.731,335.25,335.25,0.00,0.7232,7,13,13,54abdab247118cd6801402932a1cc37fad9a0d81813013ce4ce0bd8e395b4afc
+ConvNeXt-Tiny,27.823,4454.766,1385.30,1385.30,0.00,0.6296,25,31,31,3f9712101fa659d47497dcab22fa3f5d723e42c8a1e296a2fc30cabf4efd8cab
+MobileSkinXAI-Enhanced,2.498,184.731,827.15,827.15,1720.55,0.6537,10,16,16,e23df8ea224548b4112d170664a07de656e8593777db5e635825845ae9c7d0c2
+MobileSkinXAI-Enhanced (LR Control),2.498,184.731,713.19,713.19,1720.55,0.7305,8,14,14,5bed9eb03a3f3ae3d17ea4fd5a81bd5b9795696b690ecff81096ee57c1eba060

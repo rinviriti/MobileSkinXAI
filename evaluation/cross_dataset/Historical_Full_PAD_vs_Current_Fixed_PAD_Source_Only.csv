@@ -1,0 +1,13 @@
+Model,Evaluation population,Macro-F1
+MobileNetV3-Small,"Historical full PAD: 1,026 declared units",0.3836474988187074
+EfficientNet-Lite0,"Historical full PAD: 1,026 declared units",0.29445006766126103
+MobileNetV4-Conv-Small,"Historical full PAD: 1,026 declared units",0.3833495651274841
+ConvNeXt-Tiny,"Historical full PAD: 1,026 declared units",0.35020536161582
+MobileSkinXAI-Enhanced,"Historical full PAD: 1,026 declared units",0.3976693802982759
+MobileSkinXAI-Enhanced (LR Control),"Historical full PAD: 1,026 declared units",0.383087986722663
+MobileNetV3-Small,Current fixed PAD: 205 declared units,0.3838747014669557
+EfficientNet-Lite0,Current fixed PAD: 205 declared units,0.32143467631566314
+MobileNetV4-Conv-Small,Current fixed PAD: 205 declared units,0.40323950766747374
+ConvNeXt-Tiny,Current fixed PAD: 205 declared units,0.3641819971231736
+MobileSkinXAI-Enhanced,Current fixed PAD: 205 declared units,0.4238603425559947
+MobileSkinXAI-Enhanced (LR Control),Current fixed PAD: 205 declared units,0.4231598628088457

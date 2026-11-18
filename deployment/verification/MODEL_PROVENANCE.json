@@ -1,0 +1,11 @@
+{
+  "model": "MobileSkinXAI-Enhanced (LR Control)",
+  "source_checkpoint_sha256": "5bed9eb03a3f3ae3d17ea4fd5a81bd5b9795696b690ecff81096ee57c1eba060",
+  "pytorch_reference_sha256": "4e2e403e6082a935c217f66ed7da0274a88532be60e1b96c266bad55633da544",
+  "pytorch_reference_bytes": 10180779,
+  "derived_artifact": "all source state_dict tensors/buffers preserved exactly; optimizer omitted",
+  "primary_model": "app/flutter/assets/models/e2_lr_control_v20261118/model_float32.tflite",
+  "primary_sha256": "8b6e19f3d8d0dd9c3b798a2cf99c0525079b9de4ea2f5d1708dd928a718412f3",
+  "selected_epoch": 8,
+  "parameters": 2498148
+}
